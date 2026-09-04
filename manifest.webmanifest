@@ -1,0 +1,16 @@
+{
+  "name": "Sīdus — Towards Metarepresentational Ecology",
+  "short_name": "Sīdus",
+  "start_url": "./index.html#/home",
+  "display": "standalone",
+  "background_color": "#070706",
+  "theme_color": "#070706",
+  "icons": [
+    {
+      "src": "assets/sidus-mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#070706" />
+<meta name="color-scheme" content="dark" />
+<title>Sīdus — Towards Metarepresentational Ecology</title>
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" href="assets/sidus-mark.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<div id="starfield" aria-hidden="true"></div>
+<div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<header class="topbar">
+  <a class="brand" href="#/home" aria-label="Sīdus home"><span class="brand-word">SĪDUS</span><span class="brand-sub">Towards Metarepresentational Ecology</span></a>
+  <button class="mobile-menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav class="topnav" aria-label="Primary">
+    <a href="#/home" data-route="home">Dossier</a><a href="#/primer" data-route="primer">For Dummies</a><a href="#/atlas" data-route="atlas">Atlas</a><a href="#/document/0/frontpiece" data-route="document">Documents</a>
+    <button id="searchBtn" class="icon-btn" aria-label="Search">⌕</button>
+  </nav>
+</header>
+
+<aside class="rail" id="rail">
+  <div class="seal" aria-hidden="true">司 <span>量</span> 道</div>
+  <div class="rail-rule"></div>
+  <nav id="railNav" aria-label="Context navigation"></nav>
+  <div class="rail-footer"><span>PER ASPERA</span><b>AD ASTRA</b></div>
+</aside>
+
+<main id="app" tabindex="-1"></main>
+
+<div id="searchPanel" class="search-panel" aria-hidden="true">
+  <div class="search-box">
+    <div class="search-head"><label for="searchInput">Search Sīdus</label><button id="searchClose" aria-label="Close search">×</button></div>
+    <input id="searchInput" type="search" autocomplete="off" placeholder="scarcity, metarepresentation, rᵥ, Gate A4…" />
+    <div id="searchResults" class="search-results"></div>
+  </div>
+</div>
+
+<nav class="mobile-tabs" aria-label="Mobile primary navigation">
+  <a href="#/home">Dossier</a><a href="#/primer">Dummies</a><a href="#/atlas">Atlas</a><a href="#/document/0/frontpiece">Docs</a>
+</nav>
+<script src="assets/content.js"></script><script src="assets/atlas.js"></script><script src="assets/app.js"></script>
+</body></html>
