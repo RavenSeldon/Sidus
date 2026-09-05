@@ -660,7 +660,7 @@ At minimum compare:
 3. isolated causal-value predictor;
 4. **myopic value-of-computation prediction** (Russell \& Wefald 1991; Hay et
     al. 2012) — the closest competitor drawn from an established formalism;
-    specified as one-step value, not VOC in general; see Document III, H2;
+    select the eligible communication increment with greatest one-step expected net decision value, including cost and a stopping option; specify increments and budget feasibility, and keep proportional-value allocation as a separately named heuristic; see Document III, H2;
 5. joint empirical resource model;
 6. joint resource + topology features;
 7. implementation/head identity.
@@ -885,7 +885,7 @@ It is:
 
 ### Gate 0 - Construct validity
 
-**Proceed only if E0 distinguishes at least one candidate metarepresentational relation from simpler controls.**
+**E1 requires all E0-A gates to pass. Strict-metarepresentation experiments additionally require the relevant E0-B definition-index to pass under validated, preregistered criteria.** The detailed two-stage rule is in Document IV; an E0-A monitoring result alone does not license a strict-meta claim.
 
 ### Gate 1 - Scarcity exists
 
@@ -910,13 +910,13 @@ It is:
 The programme should generate code before another conceptual companion.
 
 1. **Systematic construct/prior-art review**: Proust, Shea, Cleeremans/SOMA, Kanai et al., metacognition architectures, meta-control, resource-rationality, distributed communication.
-2. **E0 notebook**: synthetic first-order vs internal-state vs property-meta vs process-meta benchmark.
+2. **E0 reference and evaluator**: use a tractable exact-probability simulator to validate estimators and all gates, including negative controls, before calibrating pilot thresholds; only then freeze and confirm independently. E0-B comparisons remain exploratory until their distinct index-specific rules are validated.
 3. **E1 minimal environment**: no GP, no causal abstraction, no attention residual as primary target.
 4. **Pilot stage gate**: prove an information seam, a binding shared budget, stable informative messages, and causal use.
 5. **Freeze the smallest successful model.** Preregister/replicate.
 6. Only then select **one** extension: topology, strict-meta scarcity, or recursive control.
 
-Not all three.
+Not all three. A clean internal-validity audit does not establish contribution or close C5: systematic comparison with existing communication, control and metareasoning work remains an independent requirement before claiming novelty.
 
 ---
 

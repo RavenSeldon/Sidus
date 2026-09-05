@@ -31,3 +31,6 @@ __pycache__/
 node_modules/
 dist/
 build/
+
+#script builds
+*.patch

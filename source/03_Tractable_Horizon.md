@@ -1,27 +1,25 @@
 # Sīdus: Towards Metarepresentational Ecology
-## III. Radboud Master's: The Tractable Horizon
+## III. Master's Research: The Tractable Horizon
 
-**Programme-specific scoping note - August 2026**  
+**University-agnostic Master's scoping note - revised September 2026**
+
 **Status:** a Master's-scale research plan, not the full Sīdus programme.
 
 > **The Master's thesis should test one candidate organizing principle. It should not attempt to establish a metarepresentational ecology.**
 
 ---
 
-## 0. Current institutional reality
+## 0. Programme and supervision fit
 
-For the 2026-2027 academic year, Radboud's Artificial Intelligence Master's currently lists **Machine Learning and Neural Computing (MLNC)** and **Human Centered Intelligent Systems (HCIS)** as the offered specialisations. Radboud states that the planned Computational Cognitive Science specialisation will not start in 2026-2027 or the following academic year. [1]
+This project can be proposed within an AI, cognitive science, computational neuroscience or related research programme that supports a substantial computational thesis. Its scientific premises do not depend on a university, named specialisation, admissions route or planned start year.
 
-For this programme, **MLNC is the cleaner current home** because the tractable project is computational: artificial agents, partial observability, learned representations, information constraints, causal interventions, and probabilistic/model-comparison methods. Because the user's MSc entry would follow the 2027 pre-master and therefore begin in 2028, this institutional fit should be **re-checked in spring 2027** rather than treated as frozen programme fact.
+The implementation requires artificial agents, partial observability, learned representations, information constraints, causal interventions and probabilistic model comparison. Suitable supervision combines experience building such systems with scrutiny of construct validity, identifiability and competing explanations.
 
-That does not make the project merely an ML engineering exercise. Radboud's **Artificial Cognitive Systems** group explicitly combines computational modelling rooted in AI and computational neuroscience with empirical neural and behavioural research. [2] The **Computational Cognitive Science** group remains an important intellectual neighbour: it emphasizes conceptual analysis, formal/computational modelling, complexity analysis, and simulations, and includes work on theory building and computational explanation. [3]
+> **Implementation fit:** probabilistic machine learning, reinforcement learning and artificial cognitive systems.
+>
+> **Formal/adversarial fit:** computational cognitive science, information theory, control and scientific modelling.
 
-The practical fit is therefore:
-
-> **Primary implementation fit:** MLNC + Artificial Cognitive Systems  
-> **Formal/adversarial fit:** Computational Cognitive Science
-
-This is an assessment of research fit, not a claim about supervision availability.
+These are selection criteria, not claims about any institution's offerings or supervision availability. Confirm local prerequisites, thesis scope, compute access and supervisory support before committing; the core experiment remains the same.
 
 ---
 
@@ -211,10 +209,7 @@ A joint resource model using measured benefit should predict held-out learned al
 - isolated causal value alone;
 - fixed source identity;
 - encoder-head identity;
-- **myopic value of computation (myopic VOC)** — allocate monitoring rate to
-  source \(v\) in proportion to the **one-step** expected improvement in
-  downstream decision quality from resolving \(C_v\) (Russell \& Wefald 1991;
-  Hay et al. 2012).
+- **myopic value of computation (myopic VOC)** — define eligible increments of monitoring communication and select the increment with greatest **one-step expected net improvement** in downstream decision quality, accounting for communication cost and the option to stop. Specify increment size, information updates and budget feasibility. Rate proportional to gross one-step value is a separate heuristic, not the canonical meta-greedy policy (Russell \& Wefald 1991; Hay et al. 2012; Callaway et al. 2018).
 
 **[Design addition, August 2026 — revised after release-candidate review]**
 Uniform allocation is a null; entropy-only, inferability-only and
@@ -312,17 +307,15 @@ Manipulate downstream reach/persistence for one source and ask whether benefit/a
 
 ---
 
-## 9. Stage gates and schedule for a 45 EC extended research project
+## 9. Stage gates and adaptable research schedule
 
-Radboud's current MLNC curriculum allows either a 30 EC research project plus 15 EC internship or a **45 EC extended research project**. [4] The latter is the cleaner fit for a deep computational thesis if available and approved.
-
-The timeline below is an illustrative research schedule, not an official Radboud timetable.
+The schedule below illustrates an eight-to-nine-month research window. It is not a credit, degree-duration or institutional-timetable claim. Adapt the scope to the host programme's thesis allocation and supervision; for a shorter window, retain E0-A validation and core H1-H3 while dropping extensions.
 
 | Stage | Illustrative project window | Deliverable | Stop/narrow decision |
 |---|---:|---|---|
 | Prior art + construct freeze | month 1 | concise literature/claim register; frozen core question | if E1 is already duplicated exactly, redesign before coding |
 | Environment + baseline | months 1-2 | compact POMDP; working local controllers; direct-read baseline | if private states do not matter to performance, redesign task |
-| Information estimators | month 2 | validated \(r_v,m_v,u_v\) measurements in toy ground-truth cases | if estimates are unstable, simplify targets |
+| Measurement and gate validation | month 2 | exact-reference \(r_v,m_v,u_v\) checks and complete-evaluator negative controls before pilot threshold selection | if quantities or gate decisions are unreliable, simplify the simulator |
 | Non-binding communication | months 2-3 | all heads demonstrably informative | if heads cannot learn, do not impose scarcity |
 | Scarcity pilot | months 2-3 | stable rate-control manipulation and preliminary trade-offs | **Gate:** if no real trade-off, narrow/stop scarcity claim |
 | Freeze + preregister analysis | end of month 3 | fixed environment, manipulations, models and seed/precision plan | no confirmatory tuning afterward |
@@ -333,67 +326,48 @@ The timeline below is an illustrative research schedule, not an official Radboud
 
 ---
 
-## 10. Radboud curriculum alignment
+## 10. Curriculum and methods alignment
 
-Radboud lists MLNC as a 120 EC Master's. The 2026-2027 provisional structure includes 18 EC common compulsory courses, 18 EC specialisation courses, 21 EC track courses, 18 EC free electives, and either the 45 EC extended research project or a 30 EC project plus 15 EC internship. [4]
+Evaluate a prospective programme by access to the methods the thesis needs, rather than course titles or a particular specialisation:
 
-The listed MLNC specialisation courses are particularly aligned with the methods this thesis needs:
+- **Probability, statistics and Bayesian modelling:** uncertainty, calibration and model comparison.
+- **Machine learning and neural computation:** learned encoders, consumers and representation controls.
+- **Reinforcement learning and decision processes:** partial observability, policies and task value.
+- **Information theory and constrained optimisation:** conditional information, rate surrogates and feasibility.
+- **Causal inference and computational modelling:** selective interventions, identifiability and competing explanations.
 
-- **Bayesian Machine Learning** - uncertainty, model comparison, posterior reasoning;
-- **Complex Adaptive Systems** - interacting modules and system-level dynamics;
-- **Neural Computation** - computational-neuroscience grounding;
-- **Advanced Deep Learning** - implementation and representation learning. [4]
-
-For the **Machine Learning track**, Radboud lists Probabilistic Deep Learning among the compulsory track courses; that track is the cleaner methodological match if the thesis remains focused on probabilistic representation, bottlenecks and learned agents. [4]
-
-The **Neural Computing track** is more appropriate if the project shifts toward neuromorphic systems, BCI or biologically constrained implementation. Radboud describes that track as focused on brain-inspired technologies, including neuromorphic systems and brain-computer interfaces. [4]
+Coursework, supervised reading or prior experience can supply these foundations. Information theory and experimental design must be explicitly covered even if absent from the formal curriculum. Neuromorphic systems, BCI and biological implementation are optional directions, not prerequisites for the synthetic core.
 
 ---
 
-## 11. Pre-Master's as preparation, not administrative delay
+## 11. Preparation and prerequisite gaps
 
-Radboud's 2026-2027 page for a Life/Social Sciences background lists a 57 EC MLNC pre-Master's. It includes Calculus 2, Probability Theory, Programming 1 and 2, From Data to Model, Linear Algebra, Bayesian Networks, Reinforcement Learning, Deep Learning, introductory digital signal processing, Brain-Computer Interfacing, Bayesian Statistics, and Cognitive Computational Neuroscience. [5]
+Assess preparation individually, whether entry is direct or involves a bridging programme. Relevant foundations are programming, calculus, linear algebra, probability and statistics, followed by machine learning, reinforcement learning and computational cognition.
 
-That sequence maps unusually well onto the thesis's actual dependencies:
+The dependency sequence is:
 
 \[
-\begin{aligned}
-\text{probability} &\rightarrow \text{information theory} \rightarrow \text{optimization} \\
-&\rightarrow \text{RL/POMDPs} \rightarrow \text{probabilistic modelling} \\
-&\rightarrow \text{causal intervention}.
-\end{aligned}
+\begin{array}{c}
+\text{probability and programming}\rightarrow\text{information theory and optimisation}\\[3pt]
+\rightarrow\text{RL/POMDPs and probabilistic modelling}\rightarrow\text{causal experimental design}.
+\end{array}
 \]
 
-The gap is information theory/rate-distortion itself, which should be studied independently alongside the programme.
+Use small implementations to identify gaps before expanding the research environment. A particular admissions pathway or named preparatory course is not a scientific assumption of the thesis.
 
 ---
 
-## 12. Research-group fit
+## 12. Research-group and supervisor fit
 
-### Artificial Cognitive Systems - primary implementation fit
+### Implementation support
 
-Radboud describes the Artificial Cognitive Systems group as combining computational modelling rooted in AI and computational neuroscience with empirical neural and behavioural research; the group is led by Marcel van Gerven. [2]
+Look for experience with learned agents, probabilistic models, representation learning or computational neuroscience, plus sufficient compute and time for independent runs and intervention checks. Complete simulator access is essential during the synthetic phase; a biological dataset is not required.
 
-Why the thesis fits:
+### Formal and adversarial support
 
-- learned artificial cognitive systems;
-- neural/computational modelling;
-- probabilistic representation and control;
-- a plausible future bridge to empirical neural/behavioural data;
-- complete internal access in the synthetic phase.
+Look for supervision that can challenge the construct, assess identifiability and computational tractability, and demand comparisons with established communication, control and metareasoning models. Computational modelling should force theoretical commitments to become testable; relevant methodological precedents include Guest & Martin and van Rooij & Baggio. [1,2]
 
-### Computational Cognitive Science - formal/adversarial fit
-
-The Computational Cognitive Science group, led by Iris van Rooij, explicitly uses conceptual analysis, formal/computational modelling, complexity analysis and simulation across symbolic, neural, Bayesian, dynamical and logical approaches. [3] The group lists Guest & Martin's work on computational modelling as theory-forcing and van Rooij & Baggio's work on theory before testing among its key publications. [3,6,7]
-
-Why that matters:
-
-- the programme is especially vulnerable to formal-looking but unconstraining models;
-- "metarepresentational ecology" needs a defined explanandum, not merely an appealing metaphor;
-- normative allocation models need a computational-level interpretation distinct from learned implementation;
-- tractability and identifiability should constrain claims before large experiments are run.
-
-The CCS **research group exists regardless of the delayed Master's specialisation**. The appropriate claim is intellectual proximity, not an assumption that a particular researcher will supervise the project.
+One supervisor or a complementary supervisory team may provide this combination. Confirm actual interest and availability rather than inferring them from a lab label. The project fits a host through its methods and question, not through an institutional affiliation.
 
 ---
 
@@ -480,15 +454,10 @@ A one-paper thesis that kills a grander idea remains a successful scientific out
 
 ---
 
-# References and current Radboud sources
+# References
 
-1. Radboud University. *Artificial Intelligence Master's specialisation*. Current programme notice: Computational Cognitive Science specialisation delayed; MLNC and HCIS offered for the next two years. https://www.ru.nl/en/education/masters/artificial-intelligence
-2. Radboud University, Donders Centre for Cognition. *Artificial Cognitive Systems*. https://www.ru.nl/en/departments/donders-centre-for-cognition/artificial-cognitive-systems
-3. Radboud University, Donders Centre for Cognition. *Computational Cognitive Science*. https://www.ru.nl/en/departments/donders-centre-for-cognition/computational-cognitive-science
-4. Radboud University. *Machine Learning and Neural Computing - Courses, 2026-2027 provisional curriculum*. https://www.ru.nl/en/education/masters/machine-learning-and-neural-computing/study-programme/courses
-5. Radboud University. *Pre-Master's MLNC - Background in Life and Social Sciences, 2026-2027 provisional curriculum*. https://www.ru.nl/en/education/pre-masters/pre-masters-artificial-intelligence-machine-learning-and-neural-computing/study-programme/background-in-life-and-social-sciences
-6. Guest, O., & Martin, A. E. (2021). How computational modeling can force theory building in psychological science. *Perspectives on Psychological Science, 16*(4), 789-802. https://doi.org/10.1177/1745691620970585
-7. van Rooij, I., & Baggio, G. (2021). Theory before the test: How to build high-verisimilitude explanatory theories in psychological science. *Perspectives on Psychological Science, 16*(4), 682-697. https://doi.org/10.1177/1745691620970604
-
-8. Russell, S., & Wefald, E. (1991). Principles of metareasoning. *Artificial Intelligence, 49*(1-3), 361-395. https://doi.org/10.1016/0004-3702(91)90015-C
-9. Hay, N., Russell, S., Tolpin, D., & Shimony, S. E. (2012). Selecting computations: Theory and applications. *Proceedings of UAI 2012*, 346-355. https://arxiv.org/abs/1408.2048
+1. Guest, O., & Martin, A. E. (2021). How computational modeling can force theory building in psychological science. *Perspectives on Psychological Science, 16*(4), 789-802. https://doi.org/10.1177/1745691620970585
+2. van Rooij, I., & Baggio, G. (2021). Theory before the test: How to build high-verisimilitude explanatory theories in psychological science. *Perspectives on Psychological Science, 16*(4), 682-697. https://doi.org/10.1177/1745691620970604
+3. Russell, S., & Wefald, E. (1991). Principles of metareasoning. *Artificial Intelligence, 49*(1-3), 361-395. https://doi.org/10.1016/0004-3702(91)90015-C
+4. Hay, N., Russell, S., Tolpin, D., & Shimony, S. E. (2012). Selecting computations: Theory and applications. *Proceedings of UAI 2012*, 346-355. https://arxiv.org/abs/1408.2048
+5. Callaway, F., Gul, S., Krueger, P., Griffiths, T. L., & Lieder, F. (2018). Learning to select computations. *Proceedings of UAI 2018*. https://auai.org/uai2018/proceedings/papers/269.pdf

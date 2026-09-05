@@ -85,9 +85,11 @@ u_v=
 
 The purpose is not to require independence between \(C_v\) and public history. It is to verify that a non-trivial informational problem remains after ordinary public information is used.
 
-### 2.2 Practical estimator
+### 2.2 Exact reference and practical estimator
 
-The true conditional entropy is generally unavailable. Fit a calibrated held-out predictor \(\hat p_0(c\mid\mathcal I_t)\) and estimate predictive cross-entropy:
+**Exact reference first.** The initial E0-A simulator must permit exact enumeration or exact filtering of the joint distribution, including the coordinator's pre-message information state. Observing realized ground-truth states does not by itself make their conditional distributions tractable. Compute \(H(C_v\mid\mathcal I)\) and the Bayes public-only/direct-read task values exactly in this reference environment. These quantities anchor A1; gains over a bounded public-only consumer are reported separately as computational accessibility, not evidence of hidden information.
+
+For later environments where exact conditionals are unavailable, validate the measurement procedure against the exact reference before using it to support gates. Fit a calibrated held-out predictor \(\hat p_0(c\mid\mathcal I_t)\) and estimate predictive cross-entropy:
 
 \[
 \widehat{CE}_0
@@ -96,7 +98,7 @@ The true conditional entropy is generally unavailable. Fit a calibrated held-out
 [-\log_2 \hat p_0(C_{v,t}\mid\mathcal I_t)].
 \]
 
-Because held-out cross-entropy upper-bounds the true conditional entropy by the predictor's approximation error, it should be treated as an **estimator/proxy**, not as exact entropy unless the decoder is demonstrably close to Bayes-optimal.
+Population cross-entropy equals conditional entropy plus non-negative decoder approximation error; a finite held-out average is itself uncertain. Positive cross-entropy therefore supplies no lower bound proving hiddenness. Report approximation and sampling error separately. If these cannot be bounded adequately for the gate decision, report **inconclusive** rather than pass.
 
 ### 2.3 Direct-read headroom
 
@@ -124,7 +126,7 @@ Pass only if:
 2. the direct-read oracle shows that information about \(C_v\) can matter to the task;
 3. public shortcut performance is quantified, not assumed absent.
 
-**Thresholds such as \(u_v\ge0.25\) should not be fixed by aesthetics.** Calibrate pilot thresholds from task headroom and freeze them before confirmatory runs.
+**Thresholds such as \(u_v\ge0.25\) should not be fixed by aesthetics.** First validate the estimators and complete gate evaluator against exact ground truth, including negative controls; only then calibrate pilot thresholds from task headroom and freeze them before independent confirmatory runs. A pilot with an inadequate decoder can bake its bias into the threshold; freezing does not remove that bias.
 
 ---
 
@@ -169,7 +171,15 @@ Then estimate:
 \widehat{CE}_1.
 \]
 
-This is an empirical conditional-information estimate under the chosen decoder class. Report cross-validation uncertainty and calibration diagnostics.
+Use exact \(m_v\) as the initial simulator's reference. The log-loss difference is a decoder-dependent proxy, not automatically conditional mutual information. At population level,
+
+\[
+CE_0-CE_1=m_v+\epsilon_0-\epsilon_1,
+\]
+
+where \(\epsilon_i\ge0\) is decoder \(i\)'s expected conditional KL approximation error. Matching classes and nested features does not equalize those errors. For public fair bits \(A,B\), target \(C=A\oplus B\), and message \(S=C\), exact hiddenness and incremental information are zero, yet linear logistic decoders can report nearly one apparent bit because the added message makes XOR linearly readable. This can falsely support both A1 and A2; it does not establish a false pass of all four gates, since a correct A3 support check rejects the alternative-state construction.
+
+Validate the proxy against exact values across known-positive, public-shortcut and collapsed-channel controls, and report approximation error, calibration and cross-validation uncertainty before threshold selection. The complete evaluator must also reject informative-but-unused and forbidden-access controls and distinguish redundant consumer reliance from informational benefit.
 
 ### 3.3 Rate spent
 
@@ -264,7 +274,7 @@ Three things follow.
 
 Pass only if, under a non-binding communication condition:
 
-1. \(\hat m_v\) is meaningfully above zero with uncertainty reported;
+1. exact \(m_v\), or a validated estimate with approximation and sampling uncertainty accounted for, is meaningfully above zero;
 2. \(r_v>0\) and the encoder has not collapsed;
 3. performance approaches the direct-read ceiling enough to show that the channel can solve the intended information problem.
 
@@ -288,7 +298,7 @@ q(S_v\mid C'_{v,t},\mathcal I_t),
 C'_{v,t}\neq C_{v,t}.
 \]
 
-The intervention should remain near trained support. Avoid arbitrary zeroing unless zero is itself a trained message state.
+Require \(C'_v\) to be reachable conditional on the same \(\mathcal I_t\), and verify replacement-message support conditional on all other inputs held fixed at the consumer, including non-target messages. Marginal familiarity of a message is insufficient. Record the eligible intervention population and use paired draws or replay with non-target state and randomness held fixed where appropriate. If no eligible alternative exists, report **not applicable** for that intervention; do not substitute a zero effect or count it as a pass. Avoid arbitrary zeroing unless zero is a trained, conditionally supported message state.
 
 ### 4.2 Primary outcome
 
@@ -304,7 +314,7 @@ Examples:
 \Delta J_v.
 \]
 
-Total return \(J\) is secondary when downstream compensation could mask a genuine local causal effect.
+Total return \(J\) is secondary when downstream compensation could mask a genuine local causal effect. This intervention estimates the existing consumer's dependence on its message. It is distinct from the achievable task-value difference between matched consumers with and without the channel, and from exact Bayes informational headroom. Report these estimands separately: a consumer can rely on redundant information.
 
 ### 4.3 Non-target preservation
 
@@ -344,19 +354,17 @@ H(C_v\mid\mathcal I)_{\mathrm{high\ privacy}}
 H(C_v\mid\mathcal I)_{\mathrm{low\ privacy}}.
 \]
 
-As public observability increases, predict:
+The manipulation must reveal the task-relevant information supplied by the message, not merely an unrelated component of \(C_v\). Reduced hiddenness alone gives only the bound
 
 \[
-H(C_v\mid\mathcal I)\downarrow
-\Rightarrow
-m_v\downarrow
+0\le m_v\le H(C_v\mid\mathcal I),
 \]
 
-and
+not a general monotonicity law for message information or benefit. For independent fair bits \(C=(A,B)\), message \(S=A\), and a task requiring \(A\), revealing \(B\) reduces hiddenness from two bits to one while message information stays at one bit and optimal accuracy gain stays at 50 percentage points. Exact estimation exposes this counterexample; it does not repair the prediction.
 
-\[
-\text{causal benefit}(S_v)\downarrow.
-\]
+Preregister a task-specific observability manipulation and establish its predicted effect using the exact reference before testing the learned system. Name three separate estimands: incremental information \(m_v\); matched achievable message benefit (with exact Bayes headroom reported separately); and the existing consumer's proximal dependence under A3. Do not use corruption sensitivity as a substitute for informational benefit.
+
+Full observability remains a valid endpoint for exact information and public-only performance. The alternative-state intervention stops where its conditional-support requirement fails; mark that endpoint **not applicable** for the intervention rather than failed or zero. Define the eligible range before confirmatory evaluation and report how the eligible population changes across the sweep.
 
 Do **not** require \(r_v\to0\) in the absence of a channel cost. Redundant coding can persist even when incremental information vanishes.
 
@@ -376,7 +384,7 @@ should be recorded as possible redundant coding, inefficient optimization, or ta
 
 ### Gate A4
 
-Pass only if the informational and causal value of \(S_v\) changes in the predicted direction as public observability is manipulated within the task distribution. **[Second external review pass.]** The manipulation check is a confirmatory test, not an impression of direction: decline thresholds — including any ratio-of-decline criterion — are preregistered before confirmatory runs, and the comparison is made with reported confidence intervals on \(\hat m_v\) and on the causal-benefit estimate, never with bare ratios of point estimates.
+Pass only if incremental information and matched achievable message benefit decline by the preregistered meaningful amounts under the validated task-relevant observability manipulation. Report confidence intervals and approximation uncertainty; any ratio criterion must be preregistered and never evaluated using bare ratios of point estimates. Report A3 consumer dependence separately over its eligible support range. Failed support or unresolved measurement uncertainty cannot be silently converted into a passing result.
 
 ---
 
@@ -458,9 +466,9 @@ E0-A licenses E1 scarcity only when all four gates pass across independent seeds
 | **A1 - Residual hiddenness + headroom** | public information leaves non-trivial uncertainty and direct-read information can improve relevant behavior |
 | **A2 - Incremental transmission** | non-binding channel transmits additional target information and avoids collapse |
 | **A3 - Selective causal use** | on-support message intervention produces the predicted local downstream effect with proximal non-target preservation |
-| **A4 - Shortcut sensitivity** | increasing legitimate public observability reduces incremental message information and its causal value |
+| **A4 - Shortcut sensitivity** | a validated task-relevant observability manipulation reduces incremental information and matched achievable message benefit; consumer dependence and support eligibility are reported separately |
 
-If a gate fails, do not proceed to multi-source scarcity as if the construct were intact. Re-engineer the task, simplify the channel, or revise the claim.
+Report **pass, fail, or inconclusive** for each gate under a preregistered seed/precision rule. **Not applicable** labels a particular unsupported intervention, not successful gate evidence. E1 is licensed only when A1-A4 pass; a false positive on A1/A2 alone is not a demonstrated false pass of E0-A. If a gate fails or remains inconclusive, do not proceed as if the construct were intact. Re-engineer the task, simplify the channel, or revise the claim.
 
 ---
 
@@ -480,7 +488,11 @@ E0\text{-}B^{\mathrm{Shea}}, \qquad E0\text{-}B^{\mathrm{RR}}, \qquad E0\text{-}
 
 run over the same architectures, preregistered manipulations and evidence tiers. A system may satisfy one operationalization and fail another. That outcome is not experimental failure. If the criteria repeatedly carve systems differently, the warranted conclusion is that **"metarepresentation" does not yet behave as one empirically unified construct**, and the programme should then speak specifically of representational-property monitoring, process representation, or representational redescription — whichever actually survived — rather than of metarepresentation simpliciter.
 
-E0-B should be refined against Proust, Shea, Cleeremans/SOMA, and process-metarepresentation work before confirmatory use.
+Before confirmatory use, each index requires a distinct executable predicate, named counterexamples and controls showing which architectures can satisfy one index while failing another. The shared discriminators below are necessary design scaffolding, not three completed definitions.
+
+For **Shea**, specify the representational property entering the candidate's correctness conditions and a consumer that uses it as such. For **RR**, test a preregistered gain in accessibility to a bounded consumer, with explicit first-order redescription, consumer-role and matched feature-transformation controls; accessibility gain alone is ordinary feature engineering as well. For **Process**, require evidence about the generating mapping beyond a scalar reliability cue, using held-out process interventions and matched simpler process-state monitors. These are operational commitments to refine against Proust, Shea, Cleeremans/SOMA and process-metarepresentation work, not claims to exhaust those accounts.
+
+Specify exactly which inputs, history, parameters, training data and computational capacity B0/B1 receive. A bounded shortcut predictor is not equivalent to conditioning on complete first-order activity. If \(M\) is a deterministic redescription of that activity, it adds no Shannon information beyond its complete inputs; it may nevertheless improve bounded-consumer accessibility. Report that accessibility separately from absolute conditional information.
 
 ---
 
@@ -556,13 +568,13 @@ A provisional evidence hierarchy is:
 
 E0-B passes **for the selected operational definition only** if the candidate B2 architecture:
 
-1. carries held-out information about the preregistered representational property/process after public and first-order shortcut predictors are controlled;
+1. satisfies the preregistered index-specific specificity or bounded-accessibility predicate, with explicit B0/B1 inputs and capacity controls; information and accessibility are reported as different estimands;
 2. can dissociate from the first-order output and can misrepresent its meta-target;
 3. responds selectively to intervention on the target representational property/process;
 4. causally affects the intended downstream consumer when manipulated while first-order representation is preserved;
 5. outperforms simpler B0/B1 explanations under held-out interventions, not merely under in-distribution decoding.
 
-Outcomes are reported **per definition-index** as a vector of pass/fail results across the three operationalizations, not collapsed into a single verdict; a split outcome is a substantive finding about the construct, per §7.
+After index-specific rules are fixed and validated, report a vector of pass/fail/inconclusive results rather than a single verdict. An unspecified or unvalidated index is not confirmatory-ready; do not manufacture a verdict from the shared checklist. A reproducible split outcome is a substantive finding about the selected operationalizations, per §7.
 
 If these conditions cannot be met under any index, the programme should not use the phrase **strict metarepresentation** for that system.
 
@@ -574,9 +586,9 @@ E0-B does **not** establish that this operationalization exhausts the concept of
 
 ## 11. Assumptions
 
-1. **Ground truth is available by construction.** The synthetic environment gives the experimenter access to \(C_t\), \(R_t\), \(\eta_t\), and intervention targets that biological work would not provide directly.
+1. **Ground truth is available by construction.** The synthetic environment exposes \(C_t\), \(R_t\), \(\eta_t\), and intervention targets. The initial reference must additionally support tractable exact conditional probabilities; access to realized states alone does not provide this.
 2. **Candidate variables are supplied by the experimenter.** E0 tests representation and use of known targets; it does not test spontaneous discovery of an internal ontology.
-3. **Auxiliary decoders are adequate enough to support conditional-information estimates.** Their limitations must be measured through held-out calibration and capacity checks.
+3. **Measurement validation precedes calibration.** Exact-reference estimator and complete-evaluator checks precede pilot threshold selection, which precedes independent confirmation. Held-out calibration and matched decoder classes alone are insufficient.
 4. **On-support interventions can be designed without destroying unrelated computations.** This must be empirically verified rather than assumed.
 5. **Task value is a legitimate local criterion.** Causal use is defined relative to the tested task and consumer; absence of use in one task does not prove universal absence of function.
 6. **Representational properties/processes are operationally specified before data inspection.** E0-B cannot infer a meta-target after the fact from whichever latent dimension decodes best.

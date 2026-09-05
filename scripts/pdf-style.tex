@@ -1,0 +1,31 @@
+\usepackage{xcolor}
+\definecolor{background}{HTML}{08090B}
+\definecolor{paper}{HTML}{E8E2D1}
+\definecolor{gold}{HTML}{C9A451}
+\pagecolor{background}\color{paper}
+\usepackage{titlesec}
+\titleformat{\section}{\sffamily\large\bfseries\color{gold}}{}{0pt}{}
+\titleformat{\subsection}{\sffamily\normalsize\bfseries\color{gold}}{}{0pt}{}
+\titleformat{\subsubsection}{\sffamily\small\bfseries\color{gold}}{}{0pt}{}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\scriptsize\color{gold}SĪDUS}
+\fancyhead[R]{\sffamily\scriptsize\color{gold}GILDED STANDARD · SEPTEMBER 2026}
+\fancyfoot[R]{\sffamily\scriptsize\color{gold}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\setcounter{page}{2}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{5pt}
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\usepackage{xurl}
+\Urlmuskip=0mu plus 2mu
+\usepackage{newunicodechar}
+\newfontfamily\symbolfont{DejaVu Sans}
+\newunicodechar{⚑}{{\symbolfont\char"2691}}
+\usepackage{needspace}
+\usepackage{etoolbox}
+\pretocmd{\section}{\Needspace{7\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{6\baselineskip}}{}{}
+\pretocmd{\subsubsection}{\Needspace{4\baselineskip}}{}{}

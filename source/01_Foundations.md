@@ -174,6 +174,8 @@ I(M;\phi(R)\mid X,\mathcal I)>0,
 
 where \(\phi(R)\) is a representational property such as source, accuracy, uncertainty, content relation, calibration, or process regime.
 
+This is an informational specificity criterion, not a universal prerequisite for every redescription account. For a bounded-consumer RR operationalization, preregister accessibility and consumer-role tests separately from absolute information; do not demand new Shannon information beyond a deterministic redescription's complete inputs. See Document IV §7.
+
 ### Tier 2 - decoupling and misrepresentation
 
 The candidate can be wrong about its target. A confidence estimate can be high when the first-order representation is wrong; a source monitor can misattribute memory as perception; a process model can infer the wrong transformation regime.
@@ -614,6 +616,19 @@ where repairs live.
 | **R7** | Gate A4 required preregistered thresholds with reported intervals; bare ratios of point estimates disallowed | Doc IV §5 |
 | **R8** | Reference repair (Geiger et al. 2021 is NeurIPS 2021, not arXiv-only); the bits convention restated where the estimators live | Doc I refs; Doc IV §0 |
 
+### Implementation-validity and portability review - September 2026
+
+These bounded repairs implement the accepted audit and its qualifications; they do not reopen the programme's conceptual scope.
+
+| ID | Correction | Lands in |
+|---|---|---|
+| **R9** | Decoder approximation error can manufacture A1 hiddenness and A2 transmission even with matched classes and nested features. Exact-reference estimator and full-evaluator validation precede pilot thresholds. This alone does not demonstrate a false pass of all E0-A gates. | Doc IV §§2-3, §6, §11; standing conventions |
+| **R10** | Declining hiddenness is only a declining upper bound on message information. A4 requires a validated manipulation of task-relevant message information and an explicit matched-benefit estimand. Exact estimation alone does not repair the prediction. | Doc IV §5 |
+| **R11** | Check intervention support conditional on fixed consumer inputs. Separate consumer dependence from achievable benefit. Retain full observability for information/performance; label unavailable alternative-state interventions not applicable. | Doc IV §§4-6 |
+| **R12** | E0-B indices require distinct executable criteria before confirmation. RR accessibility is a bounded-consumer estimand, with redescription and feature-transformation controls, not additional Shannon information beyond complete inputs. | Doc I §4; Doc IV §§7, 10 |
+| **R13** | Myopic VOC selects the greatest one-step net value, including cost and stopping; proportional allocation is a separate heuristic. E1 requires E0-A; strict-meta work requires the relevant E0-B index. Methods validation does not close C5 novelty review. | Doc II §§10, 20-21; Doc III §5 |
+| **R14** | The tractable thesis is portable across relevant AI/cognitive-science programmes. Replace institution-specific admissions, curriculum, personnel and credit assumptions with skills, supervision and project-scope requirements. | Doc III; website companions |
+
 ### Standing conventions
 
 - **Units.** All rates, entropies and informations are in **bits**
@@ -622,7 +637,7 @@ where repairs live.
 - **Estimator classes.** Where an information quantity is estimated as a
   difference of two fitted log-losses, the two predictors must be of the **same
   class and nested feature sets**, and the plug-in bias reported. A difference of
-  upper bounds is not itself a bound and can go negative.
+  upper bounds is not itself a bound and can go negative. Matching classes and nested features is necessary for a controlled comparison but insufficient for information identification. Validate against a tractable exact reference before pilot threshold selection; quantify approximation and sampling uncertainty separately.
 
 ---
 
