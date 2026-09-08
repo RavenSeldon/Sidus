@@ -14,3 +14,10 @@ REBUILDING
 Run python scripts/rebuild.py to regenerate the website readers, PDF bodies and SOURCE_SHA256.txt from source/*.md. Requirements: Pandoc 3.x, XeLaTeX with the packages in scripts/pdf-style.tex, DejaVu fonts, Latin Modern Math, and Python packages pymupdf and pypdf. Run python scripts/rebuild.py --web-only when only the web reader needs rebuilding; regenerate PDFs before releasing source-text changes.
 
 The existing cover artwork is retained in scripts/covers/. The plain-language companion remains editorial content inside assets/content.js; update it when a source correction changes its explanation. The rebuild copies the same document/companion data and application scripts into the standalone reader. Refresh the sw.js cache version for each release. Hosting remains a static-file deployment; this change introduces no server or hosting dependency.
+
+E0-A FIELD REPORT (dated companion, 7 September 2026)
+
+Results is available at #/results, with the walkthrough at #/results/e0-a.
+The script-free reading edition is e0a.html. See E0A_HANDOVER.md for the
+companion-only build/check commands and preserved-source hashes. Do not run
+canonical document/PDF regeneration to update the experimental companion.

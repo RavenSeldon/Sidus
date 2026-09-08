@@ -1,0 +1,89 @@
+{
+  "schema": "sidus-robustness-development-v1",
+  "phase": "development_not_confirmation",
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "rhos": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "primary_rho": 0.5,
+  "steps": 400,
+  "learning_rate": 0.5,
+  "candidates": {
+    "baseline": {
+      "epsilon_start": 0,
+      "consumer_lr_scale": 1,
+      "init_low": 0.1,
+      "init_high": 0.9
+    },
+    "R1": {
+      "epsilon_start": 0.1,
+      "consumer_lr_scale": 1,
+      "init_low": 0.1,
+      "init_high": 0.9
+    },
+    "R2": {
+      "epsilon_start": 0,
+      "consumer_lr_scale": 0.1,
+      "init_low": 0.1,
+      "init_high": 0.9
+    },
+    "R3": {
+      "epsilon_start": 0,
+      "consumer_lr_scale": 1,
+      "init_low": 0.25,
+      "init_high": 0.75
+    }
+  },
+  "selection": {
+    "eligible": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "order": [
+      "number_of_exact_collapses_below_full_observability",
+      "mean_joint_gap_at_primary",
+      "candidate_id"
+    ],
+    "missing_attempt": "candidate_ineligible; batch robustness unresolved",
+    "stop": "no extra candidates or seeds; report residual failures",
+    "robustness_requirement": "zero collapses, zero execution failures, all primary engineering gates pass, all control expectations met; descriptive only"
+  },
+  "grid": {
+    "points_per_axis": 11,
+    "encoder_quantiles": "inclusive uniform grid over each candidates init interval",
+    "consumer": "public Bayes policy: a(e,s)=0.5, a(i,s)=i",
+    "comparator": "public Bayes policy",
+    "rhos": [
+      0,
+      0.25,
+      0.5,
+      0.75
+    ],
+    "interpretation": "fraction of finite equally weighted grid points only; not continuous init probability; consumer slice differs from seeded initialization"
+  },
+  "reward_engineering": {
+    "delta_reward": 0.05,
+    "equivalence_margin": 1e-09,
+    "numerical_tolerance": 1e-10,
+    "scope": "erasure only; additional diagnostics, unchanged protocol gates"
+  },
+  "selection_iterate": "final_iterate_no_restarts",
+  "budget_matching": "R2 slows both consumer and comparator; fixed 400 iterations for all arms",
+  "fresh_seed_chronology": "100\u2013104 allocated before candidate execution; previously used 0\u20134 restricted to historical reconstruction",
+  "scientific_licenses": {
+    "E0A": false,
+    "E1": false,
+    "E0B": false
+  }
+}

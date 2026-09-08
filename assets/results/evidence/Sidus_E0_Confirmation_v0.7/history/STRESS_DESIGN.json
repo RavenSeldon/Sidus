@@ -1,0 +1,205 @@
+{
+  "schema": "sidus-consumer-stress-v1",
+  "phase": "recorded_development",
+  "fresh_seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035,
+    2036,
+    2037,
+    2038,
+    2039,
+    2040,
+    2041,
+    2042,
+    2043,
+    2044,
+    2045,
+    2046,
+    2047,
+    2048,
+    2049,
+    2050,
+    2051,
+    2052,
+    2053,
+    2054,
+    2055,
+    2056,
+    2057,
+    2058,
+    2059,
+    2060,
+    2061,
+    2062,
+    2063,
+    2064,
+    2065,
+    2066,
+    2067,
+    2068,
+    2069,
+    2070,
+    2071,
+    2072,
+    2073,
+    2074,
+    2075,
+    2076,
+    2077,
+    2078,
+    2079,
+    2080,
+    2081,
+    2082,
+    2083,
+    2084,
+    2085,
+    2086,
+    2087,
+    2088,
+    2089,
+    2090,
+    2091,
+    2092,
+    2093,
+    2094,
+    2095,
+    2096,
+    2097,
+    2098,
+    2099
+  ],
+  "rhos": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "primary_rho": 0.5,
+  "steps": 400,
+  "learning_rate": 0.5,
+  "arms": {
+    "baseline": {
+      "epsilon_start": 0,
+      "consumer_lr_scale": 1,
+      "init_low": 0.1,
+      "init_high": 0.9
+    },
+    "R1": {
+      "epsilon_start": 0.1,
+      "consumer_lr_scale": 1,
+      "init_low": 0.1,
+      "init_high": 0.9
+    },
+    "R2": {
+      "epsilon_start": 0,
+      "consumer_lr_scale": 0.1,
+      "init_low": 0.1,
+      "init_high": 0.9
+    },
+    "R3": {
+      "epsilon_start": 0,
+      "consumer_lr_scale": 1,
+      "init_low": 0.25,
+      "init_high": 0.75
+    }
+  },
+  "historical_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "grid": {
+    "revealed_consumer_levels": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "erased_consumer_pairs": [
+      [
+        0.25,
+        0.75
+      ],
+      [
+        0.75,
+        0.25
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "encoder_pairs": [
+      [
+        0.25,
+        0.75
+      ],
+      [
+        0.75,
+        0.25
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "rhos": [
+      0.5,
+      0.75
+    ],
+    "comparator": "public_optimal",
+    "scope": "controlled slice; common exact initial kernels for every arm; R3 initialization override makes it identical to baseline here"
+  },
+  "comparison": {
+    "unit": "seed",
+    "primary": "any exact collapse across rho<1; denominator 100 seeds",
+    "secondary": "any joint optimization gap >0.01 across rho<1",
+    "paired": "discordant seed counts versus baseline; no independent-row p values",
+    "selection": "none; report all arms; no automatic promotion",
+    "interval": "95% Wilson descriptive intervals for seed-level failure rates under declared random initialization; not confirmatory and not adjusted for multiple arms",
+    "stop": "complete fixed schedule; retain errors; no replacement seeds, extra candidates or restarts"
+  },
+  "scope": "known finite task optimization, not sampled-data generalization",
+  "licenses": {
+    "E0A": false,
+    "E1": false,
+    "E0B": false
+  }
+}

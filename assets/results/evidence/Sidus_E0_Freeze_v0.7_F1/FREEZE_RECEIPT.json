@@ -1,0 +1,18 @@
+{
+  "config_sha256": "0678ffa97bba53813c0e3e81ec9472e9829a3501d0ca5f39847b7de90a95e1b0",
+  "created_utc": "2026-09-06T21:04:29.169639+00:00",
+  "schema": "sidus-confirmation-freeze-v1",
+  "source": {
+    "calibration_draft_sha256": "3300a4383faf071604b1b6da83aad977b7746ee1e5cd835eaf524d6067814970",
+    "confirmation": {
+      "__init__.py": "ce86b0d2e2bdf297fa01746eb26c791f151ddb830889424f0085be251900a1e0",
+      "__main__.py": "a296241ef4517b47a982ab32a84daf5bf81662060d39622d1389f3e5a223c3b9",
+      "adjudicator.py": "32181912dec25fe3da03c5aca974bba64e050e968a609fb0ec2377fdfb72fd44",
+      "calibration.py": "bd87a1c0a1382d16f18cb3e2b895db86dd24e6b557f3697a700b6450a231f1bc",
+      "contract.py": "a578a7e1d537509685eddb1075abb1bb3fd2664687ff5516833e02513e931ef0",
+      "evidence.py": "5ba59b9aae9d801cc503bbfb409bae4607156936031424ed31de7d4686970701",
+      "statistics.py": "74be14e879cfe283e24f1f6586eba7efc35bdca1e1d450d4209c12ecc21387bd"
+    },
+    "history_manifest": "e4f3f0c4e6b4b30c6be51565aa62fb94df178e3cc8845cb39793fc042a87bc39"
+  }
+}

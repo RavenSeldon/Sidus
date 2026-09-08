@@ -1,0 +1,2939 @@
+{
+  "attempts": 7932,
+  "design": {
+    "arms": {
+      "R1": {
+        "consumer_lr_scale": 1,
+        "epsilon_start": 0.1,
+        "init_high": 0.9,
+        "init_low": 0.1
+      },
+      "R2": {
+        "consumer_lr_scale": 0.1,
+        "epsilon_start": 0,
+        "init_high": 0.9,
+        "init_low": 0.1
+      },
+      "R3": {
+        "consumer_lr_scale": 1,
+        "epsilon_start": 0,
+        "init_high": 0.75,
+        "init_low": 0.25
+      },
+      "baseline": {
+        "consumer_lr_scale": 1,
+        "epsilon_start": 0,
+        "init_high": 0.9,
+        "init_low": 0.1
+      }
+    },
+    "comparison": {
+      "interval": "95% Wilson descriptive intervals for seed-level failure rates under declared random initialization; not confirmatory and not adjusted for multiple arms",
+      "paired": "discordant seed counts versus baseline; no independent-row p values",
+      "primary": "any exact collapse across rho<1; denominator 100 seeds",
+      "secondary": "any joint optimization gap >0.01 across rho<1",
+      "selection": "none; report all arms; no automatic promotion",
+      "stop": "complete fixed schedule; retain errors; no replacement seeds, extra candidates or restarts",
+      "unit": "seed"
+    },
+    "fresh_seeds": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035,
+      2036,
+      2037,
+      2038,
+      2039,
+      2040,
+      2041,
+      2042,
+      2043,
+      2044,
+      2045,
+      2046,
+      2047,
+      2048,
+      2049,
+      2050,
+      2051,
+      2052,
+      2053,
+      2054,
+      2055,
+      2056,
+      2057,
+      2058,
+      2059,
+      2060,
+      2061,
+      2062,
+      2063,
+      2064,
+      2065,
+      2066,
+      2067,
+      2068,
+      2069,
+      2070,
+      2071,
+      2072,
+      2073,
+      2074,
+      2075,
+      2076,
+      2077,
+      2078,
+      2079,
+      2080,
+      2081,
+      2082,
+      2083,
+      2084,
+      2085,
+      2086,
+      2087,
+      2088,
+      2089,
+      2090,
+      2091,
+      2092,
+      2093,
+      2094,
+      2095,
+      2096,
+      2097,
+      2098,
+      2099
+    ],
+    "grid": {
+      "comparator": "public_optimal",
+      "encoder_pairs": [
+        [
+          0.25,
+          0.75
+        ],
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "erased_consumer_pairs": [
+        [
+          0.25,
+          0.75
+        ],
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.5,
+          0.5
+        ]
+      ],
+      "revealed_consumer_levels": [
+        0.1,
+        0.5,
+        0.9
+      ],
+      "rhos": [
+        0.5,
+        0.75
+      ],
+      "scope": "controlled slice; common exact initial kernels for every arm; R3 initialization override makes it identical to baseline here"
+    },
+    "historical_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "learning_rate": 0.5,
+    "licenses": {
+      "E0A": false,
+      "E0B": false,
+      "E1": false
+    },
+    "phase": "recorded_development",
+    "primary_rho": 0.5,
+    "rhos": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "schema": "sidus-consumer-stress-v1",
+    "scope": "known finite task optimization, not sampled-data generalization",
+    "steps": 400
+  },
+  "design_sha256": "1356586fedcc4bb3280c0da05a3eba6d0c6e56315c002d00d74cddcf41c2d20d",
+  "previous_manifest": "c3e75e6172b10b4e121a71850420b97454c1092a505dbf772d2c58ed85e5fb20",
+  "source": {
+    "__init__.py": "e92c9c20d0f83cd357938a76b107e50af695cc269f3b70afd9b7974fe1a2080a",
+    "__main__.py": "77e7d668807ec7d16b03dabb0900ecf37f673a739b1fcce46775581759fa5d59",
+    "batch.py": "bcbd1a91354404874392ec30e301d678f3bb161bc4f8c070be22dcd5cb90407c",
+    "training.py": "5f63972320db6992e56a396c6a2c41f7362cbc916414f9ebda1de7f7d2b47e81"
+  },
+  "summary": {
+    "arms": {
+      "R1": {
+        "collapse_count": 0,
+        "collapse_rate": 0.0,
+        "collapse_seeds": [],
+        "incomplete_seeds": [],
+        "optimization_failure_seeds": [],
+        "panels": {
+          "fresh": {
+            "collapsed_below_full": 0,
+            "execution_failures": 0,
+            "runs": 500
+          },
+          "grid": {
+            "collapsed_below_full": 28,
+            "execution_failures": 0,
+            "runs": 1458
+          },
+          "historical": {
+            "collapsed_below_full": 0,
+            "execution_failures": 0,
+            "runs": 25
+          }
+        },
+        "seed_denominator": 100,
+        "wilson95": [
+          3.469446951953614e-18,
+          0.03699349820698568
+        ]
+      },
+      "R2": {
+        "collapse_count": 53,
+        "collapse_rate": 0.53,
+        "collapse_seeds": [
+          2000,
+          2001,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2012,
+          2014,
+          2015,
+          2019,
+          2020,
+          2021,
+          2023,
+          2026,
+          2027,
+          2028,
+          2032,
+          2034,
+          2036,
+          2037,
+          2038,
+          2044,
+          2046,
+          2047,
+          2048,
+          2051,
+          2054,
+          2055,
+          2056,
+          2057,
+          2059,
+          2060,
+          2062,
+          2063,
+          2064,
+          2066,
+          2068,
+          2070,
+          2075,
+          2077,
+          2080,
+          2082,
+          2083,
+          2087,
+          2088,
+          2090,
+          2091,
+          2092,
+          2094,
+          2097,
+          2098
+        ],
+        "incomplete_seeds": [],
+        "optimization_failure_seeds": [
+          2000,
+          2001,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2012,
+          2014,
+          2015,
+          2019,
+          2020,
+          2021,
+          2023,
+          2026,
+          2027,
+          2028,
+          2032,
+          2034,
+          2036,
+          2037,
+          2038,
+          2044,
+          2046,
+          2047,
+          2048,
+          2051,
+          2054,
+          2055,
+          2056,
+          2057,
+          2059,
+          2060,
+          2062,
+          2063,
+          2064,
+          2066,
+          2068,
+          2070,
+          2075,
+          2077,
+          2080,
+          2082,
+          2083,
+          2087,
+          2088,
+          2090,
+          2091,
+          2092,
+          2094,
+          2097,
+          2098
+        ],
+        "panels": {
+          "fresh": {
+            "collapsed_below_full": 65,
+            "execution_failures": 0,
+            "runs": 500
+          },
+          "grid": {
+            "collapsed_below_full": 462,
+            "execution_failures": 0,
+            "runs": 1458
+          },
+          "historical": {
+            "collapsed_below_full": 6,
+            "execution_failures": 0,
+            "runs": 25
+          }
+        },
+        "seed_denominator": 100,
+        "wilson95": [
+          0.4328885697009936,
+          0.6248918204065872
+        ]
+      },
+      "R3": {
+        "collapse_count": 9,
+        "collapse_rate": 0.09,
+        "collapse_seeds": [
+          2005,
+          2014,
+          2015,
+          2028,
+          2032,
+          2060,
+          2064,
+          2080,
+          2087
+        ],
+        "incomplete_seeds": [],
+        "optimization_failure_seeds": [
+          2005,
+          2014,
+          2015,
+          2028,
+          2032,
+          2060,
+          2064,
+          2080,
+          2087
+        ],
+        "panels": {
+          "fresh": {
+            "collapsed_below_full": 9,
+            "execution_failures": 0,
+            "runs": 500
+          },
+          "grid": {
+            "collapsed_below_full": 139,
+            "execution_failures": 0,
+            "runs": 1458
+          },
+          "historical": {
+            "collapsed_below_full": 2,
+            "execution_failures": 0,
+            "runs": 25
+          }
+        },
+        "seed_denominator": 100,
+        "wilson95": [
+          0.04807254000256516,
+          0.1622621285271631
+        ]
+      },
+      "baseline": {
+        "collapse_count": 20,
+        "collapse_rate": 0.2,
+        "collapse_seeds": [
+          2000,
+          2005,
+          2012,
+          2014,
+          2015,
+          2028,
+          2032,
+          2034,
+          2038,
+          2058,
+          2060,
+          2062,
+          2064,
+          2066,
+          2068,
+          2077,
+          2079,
+          2080,
+          2085,
+          2087
+        ],
+        "incomplete_seeds": [],
+        "optimization_failure_seeds": [
+          2000,
+          2005,
+          2012,
+          2014,
+          2015,
+          2028,
+          2032,
+          2034,
+          2038,
+          2058,
+          2060,
+          2062,
+          2064,
+          2066,
+          2068,
+          2077,
+          2079,
+          2080,
+          2085,
+          2087
+        ],
+        "panels": {
+          "fresh": {
+            "collapsed_below_full": 20,
+            "execution_failures": 0,
+            "runs": 500
+          },
+          "grid": {
+            "collapsed_below_full": 139,
+            "execution_failures": 0,
+            "runs": 1458
+          },
+          "historical": {
+            "collapsed_below_full": 3,
+            "execution_failures": 0,
+            "runs": 25
+          }
+        },
+        "seed_denominator": 100,
+        "wilson95": [
+          0.1333669333310325,
+          0.2888291655931589
+        ]
+      }
+    },
+    "automatic_selection": null,
+    "paired_vs_baseline": {
+      "R1": {
+        "baseline_fails_candidate_succeeds": 20,
+        "baseline_succeeds_candidate_fails": 0,
+        "complete": true
+      },
+      "R2": {
+        "baseline_fails_candidate_succeeds": 3,
+        "baseline_succeeds_candidate_fails": 36,
+        "complete": true
+      },
+      "R3": {
+        "baseline_fails_candidate_succeeds": 11,
+        "baseline_succeeds_candidate_fails": 0,
+        "complete": true
+      }
+    },
+    "scientific_licenses": {
+      "E0A": false,
+      "E0B": false,
+      "E1": false
+    },
+    "seed_outcomes": {
+      "R1": [
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2000
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2001
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2002
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2003
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2004
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2005
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2006
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2007
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2008
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2009
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2010
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2011
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2012
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2013
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2014
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2015
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2016
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2017
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2018
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2019
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2020
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2021
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2022
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2023
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2024
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2025
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2026
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2027
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2028
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2029
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2030
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2031
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2032
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2033
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2034
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2035
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2036
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2037
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2038
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2039
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2040
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2041
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2042
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2043
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2044
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2045
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2046
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2047
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2048
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2049
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2050
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2051
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2052
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2053
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2054
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2055
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2056
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2057
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2058
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2059
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2060
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2061
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2062
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2063
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2064
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2065
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2066
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2067
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2068
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2069
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2070
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2071
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2072
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2073
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2074
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2075
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2076
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2077
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2078
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2079
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2080
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2081
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2082
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2083
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2084
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2085
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2086
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2087
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2088
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2089
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2090
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2091
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2092
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2093
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2094
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2095
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2096
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2097
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2098
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2099
+        }
+      ],
+      "R2": [
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2000
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2001
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2002
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2003
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2004
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2005
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2006
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2007
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2008
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2009
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2010
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2011
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2012
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2013
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2014
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2015
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2016
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2017
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2018
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2019
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2020
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2021
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2022
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2023
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2024
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2025
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2026
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2027
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2028
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2029
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2030
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2031
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2032
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2033
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2034
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2035
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2036
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2037
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2038
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2039
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2040
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2041
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2042
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2043
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2044
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2045
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2046
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2047
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2048
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2049
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2050
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2051
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2052
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2053
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2054
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2055
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2056
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2057
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2058
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2059
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2060
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2061
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2062
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2063
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2064
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2065
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2066
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2067
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2068
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2069
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2070
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2071
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2072
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2073
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2074
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2075
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2076
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2077
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2078
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2079
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2080
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2081
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2082
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2083
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2084
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2085
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2086
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2087
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2088
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2089
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2090
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2091
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2092
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2093
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2094
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2095
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2096
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2097
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2098
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2099
+        }
+      ],
+      "R3": [
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2000
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2001
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2002
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2003
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2004
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2005
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2006
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2007
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2008
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2009
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2010
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2011
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2012
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2013
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2014
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2015
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2016
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2017
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2018
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2019
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2020
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2021
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2022
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2023
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2024
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2025
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2026
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2027
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2028
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2029
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2030
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2031
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2032
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2033
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2034
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2035
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2036
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2037
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2038
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2039
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2040
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2041
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2042
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2043
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2044
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2045
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2046
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2047
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2048
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2049
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2050
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2051
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2052
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2053
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2054
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2055
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2056
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2057
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2058
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2059
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2060
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2061
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2062
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2063
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2064
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2065
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2066
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2067
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2068
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2069
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2070
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2071
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2072
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2073
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2074
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2075
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2076
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2077
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2078
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2079
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2080
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2081
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2082
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2083
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2084
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2085
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2086
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2087
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2088
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2089
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2090
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2091
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2092
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2093
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2094
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2095
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2096
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2097
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2098
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2099
+        }
+      ],
+      "baseline": [
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2000
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2001
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2002
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2003
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2004
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2005
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2006
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2007
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2008
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2009
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2010
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2011
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2012
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2013
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2014
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2015
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2016
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2017
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2018
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2019
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2020
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2021
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2022
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2023
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2024
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2025
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2026
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2027
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2028
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2029
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2030
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2031
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2032
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2033
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2034
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2035
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2036
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2037
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2038
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2039
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2040
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2041
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2042
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2043
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2044
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2045
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2046
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2047
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2048
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2049
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2050
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2051
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2052
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2053
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2054
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2055
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2056
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2057
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2058
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2059
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2060
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2061
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2062
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2063
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2064
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2065
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2066
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2067
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2068
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2069
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2070
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2071
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2072
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2073
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2074
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2075
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2076
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2077
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2078
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2079
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2080
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2081
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2082
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2083
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2084
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2085
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2086
+        },
+        {
+          "collapse": true,
+          "complete": true,
+          "optimization_failure": true,
+          "seed": 2087
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2088
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2089
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2090
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2091
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2092
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2093
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2094
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2095
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2096
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2097
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2098
+        },
+        {
+          "collapse": false,
+          "complete": true,
+          "optimization_failure": false,
+          "seed": 2099
+        }
+      ]
+    }
+  }
+}

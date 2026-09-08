@@ -58,6 +58,8 @@ def build_web():
         assert len(re.findall(pattern,standalone,re.S))==1,marker
         standalone=re.sub(pattern,lambda _: '<script>\n'+(ROOT/'assets'/asset).read_text()+'\n</script>',standalone,flags=re.S)
     p.write_text(standalone)
+    # Keep the dated result companion synchronized without adding it to SIDUS_DATA.
+    subprocess.run(['node',str(ROOT/'scripts/build_companion.mjs')],check=True)
 
 def build_pdfs():
     import fitz

@@ -1,0 +1,21 @@
+{
+  "Sidus_E0_F1_Execution/ADJUDICATION.json": "655c0cfc55594c95bbd4ee01321418cc2fff8131b6c2b42e34fdf0039aba4edc",
+  "Sidus_E0_F1_Execution/DESCRIPTIVE_SUMMARY.json": "bb1314ffcd9d03d99232cbd447c47c1b49a0e6e286128eaf3a420c5f3a667850",
+  "Sidus_E0_F1_Execution/CONDITION_OUTCOMES.csv": "50bca26240dbe4aef0752a3390e07888cadca9275e36e8b0b2a3ad200526e2bd",
+  "Sidus_E0_F1_Execution/SEED_OUTCOMES.csv": "3835105dd606d8d14f2ab7a2c7a7757a349b851ba710d78e13da3a860adf82a0",
+  "Sidus_E0_F1_Execution/INDEPENDENT_FINITE_AUDIT.json": "b1a27dd359c943a9c67bdbb2950e5ac94e91f7580af2d62844e83247b651cc8a",
+  "Sidus_E0_F1_Execution/INDEPENDENT_STATISTICAL_CHECK.json": "3db7694dd45ba5e8d8ac36a05fd459943f7ca4ebdd258f15f4b7d5ceed386428",
+  "Sidus_E0_F1_Execution/REPLAY_PROCESS.json": "8b5d264aff02c494365e0779c41f9a20d8f8b2b0c392b2bccb3e2e0ca4ee8aa7",
+  "Sidus_E0_F1_Execution/POST_REPLAY_PRESERVATION.json": "d7ada51acdbf1c3cbe0c20aae8ebc6213cf1113f9f89bb231253475d6e1c3dce",
+  "Sidus_E0_F1_Execution/GENERATION_PROCESS.json": "09964a0931d505cf9fcc84f0d653c490ad9247b7b02e03cd5ea34cb5f307df63",
+  "Sidus_E0_Freeze_v0.7_F1/FROZEN_CONFIG.json": "cf7676a863e416172a24d6b63c6807ebe948ddfb47042e2d12a8d497722b3312",
+  "Sidus_E0_Freeze_v0.7_F1/FREEZE_RECEIPT.json": "5f8c2b3a32e61909c8c7b9e86972b2ed97e21a2a6246b3ce299b5bc7e7978deb",
+  "Sidus_E0_Freeze_v0.7_F1/FREEZE_SHA256.txt": "f83d09b2bcfe42345c9f88c9e6dc1fae868a79fa220882922d748ed2beb99d60",
+  "Sidus_E0_Confirmation_v0.7/history/stress_examples/SUMMARY.json": "2fc19b5175856a0094a019d9dcc8952de512de72ff1beb0beedd9e933491d420",
+  "Sidus_E0_Confirmation_v0.7/history/STRESS_DESIGN.json": "1356586fedcc4bb3280c0da05a3eba6d0c6e56315c002d00d74cddcf41c2d20d",
+  "Sidus_E0_Confirmation_v0.7/history/previous/development_examples/REPORT.md": "409deacc68590c260438c9747a5e8c4277989e7a285cb633efaa2a73e433f8f9",
+  "Sidus_E0_Confirmation_v0.7/history/previous/DESIGN.json": "f7fdb6db3c49b6380c63abcf7b8f05e268749abb16ac5d4d5791b0e158176fa9",
+  "Sidus_E0_Confirmation_v0.7/STATISTICAL_PLAN_DRAFT.md": "6f093d88a698b79d53a99a3748049f9745a680dbc7fdd36fb4f8991dcfeb5252",
+  "Sidus_E0_F1_Execution/runs/8827a4ccca164afbb8612bbcd989cae5.start.json": "4c24b9d732930dbbc362efe3a170446f995e3d748bd8a2721ee42cb62b15c83d",
+  "Sidus_E0_F1_Execution/runs/consumed_freezes/5f8c2b3a32e61909c8c7b9e86972b2ed97e21a2a6246b3ce299b5bc7e7978deb.json": "22cb9151625bd38a6a160a2f79f5a36ea668571d03931f06dd7abaf4caed6250"
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-m",
+    "confirmation",
+    "adjudicate",
+    "--folder",
+    "/workspace/scratch/2f32861a10fe/Sidus_E0_F1_Execution/runs/8827a4ccca164afbb8612bbcd989cae5",
+    "--freeze",
+    "/workspace/scratch/2f32861a10fe/Sidus_E0_Freeze_v0.7_F1/FREEZE_RECEIPT.json",
+    "--trusted-freeze-sha256",
+    "5f8c2b3a32e61909c8c7b9e86972b2ed97e21a2a6246b3ce299b5bc7e7978deb"
+  ],
+  "clean_build": "/workspace/scratch/2f32861a10fe/Sidus_E0_F1_Clean_Replay/Sidus_E0_Confirmation_v0.7",
+  "started_utc": "2026-09-06T23:39:48.233619+00:00",
+  "original_artifact_manifest_sha256": "7bbcd19087d672f55d1a936716c95383eb17e68e10bd3bd9666196f6aae4e21f",
+  "replay_kind": "separate process and clean archive extraction; same frozen implementation and runtime; not a second independent scientific sample",
+  "exit_code": 0,
+  "finished_utc": "2026-09-06T23:41:31.220136+00:00",
+  "elapsed_seconds": 102.98405384899979
+}
