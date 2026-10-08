@@ -27,8 +27,13 @@ standalone=standalone.replace(/<!-- E0A COMPANION STYLE -->[\s\S]*?<!-- END E0A 
 standalone=standalone.replace('</head>','<!-- E0A COMPANION STYLE --><style>'+read('assets/results/e0a.css')+'</style><!-- END E0A COMPANION STYLE -->\n</head>');
 standalone=standalone.replace(/<!-- E0A COMPANION SCRIPTS -->[\s\S]*?<!-- END E0A COMPANION SCRIPTS -->\n?/g,'');
 standalone=standalone.replace(/<script>\s*const DATA=/,()=>`<!-- E0A COMPANION SCRIPTS --><script>${read('assets/results/e0a-data.js')}</script><script>${read('assets/results/e0a.js')}</script><!-- END E0A COMPANION SCRIPTS -->\n<script>\nconst DATA=`);
+// E0-B is a dated companion; frozen document and Atlas payloads stay intact.
+standalone=standalone.replace(/<!-- E0B COMPANION STYLE -->[\s\S]*?<!-- END E0B COMPANION STYLE -->\n?/g,'');
+standalone=standalone.replace('</head>','<!-- E0B COMPANION STYLE --><style>'+read('assets/results/e0b.css')+'</style><!-- END E0B COMPANION STYLE -->\n</head>');
+standalone=standalone.replace(/<!-- E0B COMPANION SCRIPTS -->[\s\S]*?<!-- END E0B COMPANION SCRIPTS -->\n?/g,'');
+standalone=standalone.replace(/<script>\s*const DATA=/,()=>`<!-- E0B COMPANION SCRIPTS --><script>${read('assets/results/e0b-data.js')}</script><script>${read('assets/results/e0b.js')}</script><!-- END E0B COMPANION SCRIPTS -->\n<script>\nconst DATA=`);
 fs.writeFileSync(path.join(root,'Sidus_Dossier_Standalone.html'),standalone);
 console.log('Built static field report and synchronized standalone companion; canonical payload unchanged.');
 
-const version=createHash('sha256').update(['index.html','assets/app.js','assets/results/e0a.css','assets/results/e0a.js','assets/results/e0a-data.js','e0a.html'].map(read).join('')).digest('hex').slice(0,12);
-fs.writeFileSync(path.join(root,'sw.js'),read('sw.js').replace(/const CACHE='[^']+'/,`const CACHE='sidus-dossier-v6-e0a-${version}'`));
+const version=createHash('sha256').update(['index.html','assets/app.js','assets/results/e0a.css','assets/results/e0a.js','assets/results/e0a-data.js','e0a.html','assets/results/e0b.css','assets/results/e0b.js','assets/results/e0b-data.js'].map(read).join('')).digest('hex').slice(0,12);
+fs.writeFileSync(path.join(root,'sw.js'),read('sw.js').replace(/const CACHE='[^']+'/,`const CACHE='sidus-dossier-v7-e0b-${version}'`));

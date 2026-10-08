@@ -21,3 +21,13 @@ Results is available at #/results, with the walkthrough at #/results/e0-a.
 The script-free reading edition is e0a.html. See E0A_HANDOVER.md for the
 companion-only build/check commands and preserved-source hashes. Do not run
 canonical document/PDF regeneration to update the experimental companion.
+
+E0-B companion (8 October 2026)
+--------------------------------
+Route: #/results/e0-b; paper and unmodified v4 archive in downloads/.
+Build: python3 scripts/build_e0b.py && node scripts/build_companion.mjs
+Verify: python3 scripts/check_e0a.py; node scripts/check_companion.mjs; node scripts/check_e0b.mjs
+The E0-B builder verifies the archive manifest and freeze hashes, copies selected
+evidence unchanged, and derives the browser dataset. It does not train models.
+Do not run scripts/rebuild.py for companion edits: the canon remains frozen.
+Large PDFs/ZIPs and /research stay outside the service-worker precache.

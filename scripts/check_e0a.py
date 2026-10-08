@@ -41,7 +41,9 @@ def main():
  # All local static reading-edition links resolve, including individual provenance/source artifacts.
  for href in re.findall(r'href="([^"]+)"',html):
   path=href.split('#')[0].split('?')[0]
-  if path and not re.match(r'https?:',path):assert (ROOT/path).is_file(),href
+  if path and not re.match(r'https?:',path):
+   target=ROOT/path.lstrip('/')
+   assert target.is_file() or (target/'index.html').is_file(),href
  assert 'ATTEMPTS.jsonl' not in (ROOT/'sw.js').read_text() and '.zip' not in (ROOT/'sw.js').read_text()
  frozen={}
  if a.baseline:
