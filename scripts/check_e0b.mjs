@@ -90,4 +90,16 @@ for(const id of ['shea','rr','process']){
 const access=B.views.accessTable();assert.equal((access.match(/<tr>/g)||[]).length,7);assert.ok(access.includes('posterior'));
 for(const s of ['IDEAL','C-sup','B0-am']){const svg=B.views.profile(s);assert.ok(!/NaN|Infinity|undefined/.test(svg));assert.equal((svg.match(/<circle /g)||[]).length,120);}
 const pages=[...B.html().matchAll(/#page=(\d+)/g)].map(m=>+m[1]);assert.ok(pages.length>=8&&pages.every(n=>n>=1&&n<=12));
-console.log(`PASS E0-B: ${checks} numeric comparisons; 120 archived records, 108 witness cells, 14/20 profiles; formula enumeration and D11 support; six charts; ${links} local links; standalone and service-worker integration; cross-criteria grid, access contract, profile plane, ${pages.length} paper anchors.`);
+// Research-record landing page: recomputed seed counts, archive hash and local links.
+const landing=read('research/e0-b/index.html'),seedsC=D.spec.confirmation_seeds,thr=D.spec.thresholds;
+const h2n=seedsC.filter(s=>R[`C-end|${s}`].D11_agreement<=.2&&R[`C-end|${s}`].kappa_sens>=.25).length;
+const h3n=seedsC.filter(s=>R[`B0-am|${s}`].D11_agreement>=.3&&R[`B0-am|${s}`].kappa_R2>=thr.thr_ret).length;
+for(const [n,id] of [[D.profiles.filter(p=>p.pass).length,'H1'],[h2n,'H2'],[h3n,'H3']])assert.ok(new RegExp(`${id} ·[^<]*</th><td>Confirmed[^<]*</td><td>${n} / 20<`).test(landing),id);
+for(const id of ['H1','H2','H3'])assert.equal(D.adjudication[id].verdict,'confirmed');
+assert.ok(landing.includes(D.archive.sha256));
+for(const href of [...landing.matchAll(/href="([^"]+)"/g)].map(x=>x[1])){
+ if(/^(https?:|mailto:|\/#\/)/.test(href))continue;const t=path.join(root,href.replace(/^\//,'').split('#')[0]);
+ assert.ok(fs.existsSync(t)&&(fs.statSync(t).isFile()||fs.existsSync(path.join(t,'index.html'))),href);
+}
+assert.ok(read('research/index.html').includes('href="/research/e0-b/"'));
+console.log(`PASS E0-B: ${checks} numeric comparisons; 120 archived records, 108 witness cells, 14/20 profiles; formula enumeration and D11 support; six charts; ${links} local links; standalone and service-worker integration; cross-criteria grid, access contract, profile plane, ${pages.length} paper anchors; research-record page (H1 14, H2 ${h2n}, H3 ${h3n} of 20).`);
