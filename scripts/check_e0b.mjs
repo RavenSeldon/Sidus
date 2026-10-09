@@ -106,4 +106,11 @@ assert.ok(read('research/index.html').includes('href="/research/e0-b/"'));
 const VAL='downloads/E0B_Independent_Final_Validation.md',VALSHA='886bb51b40b46d2cf667b321b10e855ce0e80d38108820b9bb5bdd04af6aa8a3';
 assert.equal(digest(VAL),VALSHA);assert.ok(landing.includes(VALSHA)&&landing.includes('/'+VAL)&&B.html().includes('href="'+VAL+'"'));
 assert.ok(!read(VAL).includes('PLACEHOLDER'));
-console.log(`PASS E0-B: ${checks} numeric comparisons; 120 archived records, 108 witness cells, 14/20 profiles; formula enumeration and D11 support; six charts; ${links} local links; standalone and service-worker integration; cross-criteria grid, access contract, profile plane, ${pages.length} paper anchors; research-record page (H1 14, H2 ${h2n}, H3 ${h3n} of 20).`);
+// Archival release: one DOI everywhere; addendum hashes match the published files; 8 Oct originals preserved.
+const DOI='10.5281/zenodo.23252262',ADD='downloads/E0B_Publication_Addendum.md',addendum=read(ADD);
+for(const [n,t] of [['landing',landing],['companion',B.html()],['paper',read('downloads/Sidus_E0B_Research_Paper.md')],['addendum',addendum],['brief',read('research/index.html')]])assert.ok(t.includes(DOI),n);
+for(const f of ['downloads/Sidus_E0B_Research_Paper.pdf','downloads/Sidus_E0B_Research_Paper.md','downloads/E0B_MB0-MB2_archive_v4.zip',VAL])assert.ok(addendum.includes(digest(f)),f);
+assert.equal(digest('downloads/archive/Sidus_E0B_Research_Paper_2026-10-08.pdf'),'6b10e20f38961b0cbaa7a162e62749e918a3b1fd39be10fe83ac654728121c3a');
+assert.equal(digest('downloads/archive/Sidus_E0B_Research_Paper_2026-10-08.md'),'d6c3e5d6eefb7a83edc88cbb89d4324c65775691a500632c3e17215332da44dc');
+assert.ok(!/PENDING|⟨|DRAFT/.test(addendum+read('downloads/Sidus_E0B_Research_Paper.md')));
+console.log(`PASS E0-B: ${checks} numeric comparisons; 120 archived records, 108 witness cells, 14/20 profiles; formula enumeration and D11 support; six charts; ${links} local links; standalone and service-worker integration; cross-criteria grid, access contract, profile plane, ${pages.length} paper anchors; research-record page (H1 14, H2 ${h2n}, H3 ${h3n} of 20); archival release ${DOI}.`);
