@@ -102,4 +102,8 @@ for(const href of [...landing.matchAll(/href="([^"]+)"/g)].map(x=>x[1])){
  assert.ok(fs.existsSync(t)&&(fs.statSync(t).isFile()||fs.existsSync(path.join(t,'index.html'))),href);
 }
 assert.ok(read('research/index.html').includes('href="/research/e0-b/"'));
+// Supplementary validation record: published byte-for-byte, outside archive v4, linked from both pages.
+const VAL='downloads/E0B_Independent_Final_Validation.md',VALSHA='886bb51b40b46d2cf667b321b10e855ce0e80d38108820b9bb5bdd04af6aa8a3';
+assert.equal(digest(VAL),VALSHA);assert.ok(landing.includes(VALSHA)&&landing.includes('/'+VAL)&&B.html().includes('href="'+VAL+'"'));
+assert.ok(!read(VAL).includes('PLACEHOLDER'));
 console.log(`PASS E0-B: ${checks} numeric comparisons; 120 archived records, 108 witness cells, 14/20 profiles; formula enumeration and D11 support; six charts; ${links} local links; standalone and service-worker integration; cross-criteria grid, access contract, profile plane, ${pages.length} paper anchors; research-record page (H1 14, H2 ${h2n}, H3 ${h3n} of 20).`);
