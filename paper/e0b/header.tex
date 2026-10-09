@@ -1,0 +1,23 @@
+% Sīdus E0-B paper style. Reconstructed 8 Oct 2026 from the published 8 Oct PDF (fonts, colours, geometry, captions).
+\usepackage{fontspec}
+\setmainfont{Noto Serif}[BoldFont={Noto Serif ExtraBold},BoldItalicFont={Noto Serif ExtraBold Italic}]
+\setsansfont{Lato}[Scale=1.04]
+\setmonofont{DejaVu Sans Mono}[Scale=0.84]
+\setmathfont{Latin Modern Math}
+\usepackage{xcolor}
+\definecolor{Ink}{HTML}{242424}\definecolor{MidGrey}{HTML}{676866}
+\definecolor{WarmPaper}{HTML}{F7F5EF}\definecolor{WarmLine}{HTML}{D9CEB5}\definecolor{Ochre}{HTML}{947431}
+\usepackage{tcolorbox,tabularx,booktabs,graphicx}
+\usepackage[font=small,labelfont={bf,color=Ochre},labelsep=colon]{caption}
+\usepackage{titlesec}
+\titleformat{\subsection}{\sffamily\bfseries\large\color{Ochre}}{}{0pt}{}[\vspace{1pt}{\color{WarmLine}\titlerule[0.4pt]}]
+\titlespacing*{\subsection}{0pt}{15pt plus 4pt minus 2pt}{7pt}
+\titleformat{\subsubsection}{\sffamily\bfseries\normalsize}{}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{9pt plus 3pt minus 2pt}{3pt}
+\usepackage{fancyhdr}
+\newcommand{\sidushdr}[1]{{\sffamily\fontsize{8}{10}\selectfont\color{MidGrey}#1}}
+\pagestyle{fancy}\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\sidushdr{SĪDUS\quad/\quad E0-B}}\fancyhead[R]{\sidushdr{AMUWO\quad∙\quad OCTOBER 2026}}
+\fancyfoot[C]{{\sffamily\fontsize{9}{11}\selectfont\color{MidGrey}\thepage}}
+\fancypagestyle{plain}{\pagestyle{fancy}}
+\AtBeginDocument{\color{Ink}\hypersetup{colorlinks=true,linkcolor=Ink,urlcolor=Ink,citecolor=Ink}}
