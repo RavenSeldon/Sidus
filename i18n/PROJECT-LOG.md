@@ -22,6 +22,9 @@ With the `claude` CLI logged in on Hel, steps 1–3 are replaced by `node script
 - [x] CP4: bundles built. `check.mjs --render` covers 8 languages × 16 Wave 1 pages and passes: no page errors, no English left, frozen canon unchanged. `build_companion.mjs` bumped the sw CACHE to `sidus-dossier-v7-e0b-e7423b1ebb26`. check_companion, check_e0b and check_e0a all PASS, and `e0a.html` and the Standalone are byte-unchanged. The `check.mjs` false positive for translations identical to English is fixed (2026-10-14 13:40).
 - [x] CP5: `i18n/README.md` (runbook and review guide). Review sheets are exported to `i18n/work/<code>.review.tsv` (`--export`, then `--import --reviewed`). `.gitignore` ignores `i18n/work/`. Screenshots are in `~/Root/Hel-Setup/i18n-shots/`. HEL-SETUP has a pointer. The transfer inbox is removed (2026-10-14 13:40).
 
+## Wave 2 checkpoints
+- [x] Français (`fr`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 15:09)
+
 ## Done (verified by)
 - Runtime and pipeline. Marker test, 2026-10-14:
   - Every Wave 1 unit was replaced in French, with zero English left and no page errors across all 15 Wave 1 routes.

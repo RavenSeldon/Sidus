@@ -77,6 +77,19 @@
 {"en": "plate", "fr": "planche", "es": "lámina", "pt": "prancha", "nl": "plaat", "zh-hans": "图版", "ja": "図版", "ar": "لوحة", "note": "an illustrated page of the atlas"},
 {"en": "Equation lab", "fr": "Laboratoire d’équations", "es": "Laboratorio de ecuaciones", "pt": "Laboratório de equações", "nl": "Vergelijkingenlab", "zh-hans": "方程实验室", "ja": "数式ラボ", "ar": "مختبر المعادلات"},
 {"en": "Master's", "fr": "master", "es": "maestría", "pt": "mestrado", "nl": "master", "zh-hans": "硕士", "ja": "修士", "ar": "الماجستير"},
-{"en": "Astrocyte", "fr": "Astrocyte", "es": "Astrocyte", "pt": "Astrocyte", "nl": "Astrocyte", "zh-hans": "Astrocyte", "ja": "Astrocyte", "ar": "Astrocyte", "note": "name of an optional methods module (Bayesian optimization); keep as is"}
+{"en": "Astrocyte", "fr": "Astrocyte", "es": "Astrocyte", "pt": "Astrocyte", "nl": "Astrocyte", "zh-hans": "Astrocyte", "ja": "Astrocyte", "ar": "Astrocyte", "note": "name of an optional methods module (Bayesian optimization); keep as is"},
+{"en": "identifiability", "fr": "identifiabilité", "es": "identificabilidad", "pt": "identificabilidade", "nl": "identificeerbaarheid", "zh-hans": "可识别性", "ja": "識別可能性", "ar": "قابلية التحديد", "note": "statistical or experimental identifiability"},
+{"en": "held-out", "fr": "réservé pour l’évaluation", "es": "reservado para evaluación", "pt": "retido para avaliação", "nl": "apart gehouden voor evaluatie", "zh-hans": "留出用于评估的", "ja": "評価用に留保した", "ar": "محجوز للتقييم", "note": "data, environments or interventions excluded from fitting and used for evaluation"},
+{"en": "baseline", "fr": "référence", "es": "línea de base", "pt": "linha de base", "nl": "baseline", "zh-hans": "基线", "ja": "ベースライン", "ar": "خط الأساس", "note": "a comparison model or condition"},
+{"en": "preregistered", "fr": "préenregistré", "es": "prerregistrado", "pt": "pré-registrado", "nl": "vooraf geregistreerd", "zh-hans": "预注册的", "ja": "事前登録済みの", "ar": "مسجّل مسبقًا"},
+{"en": "calibration", "fr": "calibration", "es": "calibración", "pt": "calibração", "nl": "kalibratie", "zh-hans": "校准", "ja": "較正", "ar": "المعايرة"},
+{"en": "conditional support", "fr": "support conditionnel", "es": "soporte condicional", "pt": "suporte condicional", "nl": "conditionele ondersteuning", "zh-hans": "条件支持集", "ja": "条件付きサポート", "ar": "الدعم الشرطي", "note": "support of a probability distribution conditional on the consumer's other inputs"},
+{"en": "exact reference", "fr": "référence exacte", "es": "referencia exacta", "pt": "referência exata", "nl": "exacte referentie", "zh-hans": "精确参照", "ja": "厳密な参照", "ar": "المرجع الدقيق", "note": "a tractable ground-truth calculation used to validate an estimator"},
+{"en": "rate-distortion", "fr": "débit-distorsion", "es": "tasa-distorsión", "pt": "taxa-distorção", "nl": "rate-distortion", "zh-hans": "率失真", "ja": "レート歪み", "ar": "المعدّل-التشويه", "note": "information-theoretic term"},
+{"en": "metacognition", "fr": "métacognition", "es": "metacognición", "pt": "metacognição", "nl": "metacognitie", "zh-hans": "元认知", "ja": "メタ認知", "ar": "ما وراء المعرفة"},
+{"en": "meta-control", "fr": "méta-contrôle", "es": "metacontrol", "pt": "metacontrole", "nl": "metacontrole", "zh-hans": "元控制", "ja": "メタ制御", "ar": "التحكم الماورائي"},
+{"en": "incremental information", "fr": "information incrémentale", "es": "información incremental", "pt": "informação incremental", "nl": "incrementele informatie", "zh-hans": "增量信息", "ja": "増分情報", "ar": "المعلومات الإضافية"},
+{"en": "process metarepresentation", "fr": "métareprésentation de processus", "es": "metarrepresentación del proceso", "pt": "metarrepresentação de processo", "nl": "procesmetarepresentatie", "zh-hans": "过程元表征", "ja": "過程メタ表象", "ar": "التمثيل الماورائي للعملية"},
+{"en": "representational property", "fr": "propriété représentationnelle", "es": "propiedad representacional", "pt": "propriedade representacional", "nl": "representationele eigenschap", "zh-hans": "表征属性", "ja": "表象的性質", "ar": "الخاصية التمثيلية"}
 ]
 }

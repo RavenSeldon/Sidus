@@ -109,7 +109,7 @@
       ".*"
     ]
   },
-  "currentWave": "wave1",
+  "currentWave": "wave2",
   "patterns": {
     "minMembers": 3,
     "maxWords": 12

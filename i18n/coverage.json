@@ -1,8 +1,8 @@
 {
-  "built": "2026-10-14T20:40:14.873Z",
-  "sourceCommit": "baa94c2",
+  "built": "2026-10-14T22:28:58.999Z",
+  "sourceCommit": "dcb6410",
   "languages": {
-    "fr": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":551,"words":28497,"wordsDone":4797},"stale":0,"invalid":0},
+    "fr": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":2416,"words":28497,"wordsDone":28497},"stale":0,"invalid":0},
     "es": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":551,"words":28497,"wordsDone":4797},"stale":0,"invalid":0},
     "pt": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":551,"words":28497,"wordsDone":4797},"stale":0,"invalid":0},
     "nl": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":551,"words":28497,"wordsDone":4797},"stale":0,"invalid":0},

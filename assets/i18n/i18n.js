@@ -14,7 +14,7 @@
  */
 (function () {
   'use strict';
-  var LANGS = /*LANGS*/[{"code":"en","lang":"en","name":"English","dir":"ltr","status":"source"},{"code":"fr","lang":"fr","name":"Français","dir":"ltr","status":"draft","v":"1b8ad27dcb"},{"code":"es","lang":"es","name":"Español","dir":"ltr","status":"draft","v":"974abdc29e"},{"code":"pt","lang":"pt-BR","name":"Português","dir":"ltr","status":"draft","v":"13ea2a754d"},{"code":"nl","lang":"nl","name":"Nederlands","dir":"ltr","status":"draft","v":"73c196d267"},{"code":"zh-hans","lang":"zh-Hans","name":"简体中文","dir":"ltr","status":"draft","v":"b8d80562f0"},{"code":"ja","lang":"ja","name":"日本語","dir":"ltr","status":"draft","v":"c2b4084bc2"},{"code":"ar","lang":"ar","name":"العربية","dir":"rtl","status":"draft","v":"d513ec0020"}]/*END LANGS*/;
+  var LANGS = /*LANGS*/[{"code":"en","lang":"en","name":"English","dir":"ltr","status":"source"},{"code":"fr","lang":"fr","name":"Français","dir":"ltr","status":"draft","v":"d325ac0b3c"},{"code":"es","lang":"es","name":"Español","dir":"ltr","status":"draft","v":"974abdc29e"},{"code":"pt","lang":"pt-BR","name":"Português","dir":"ltr","status":"draft","v":"13ea2a754d"},{"code":"nl","lang":"nl","name":"Nederlands","dir":"ltr","status":"draft","v":"73c196d267"},{"code":"zh-hans","lang":"zh-Hans","name":"简体中文","dir":"ltr","status":"draft","v":"b8d80562f0"},{"code":"ja","lang":"ja","name":"日本語","dir":"ltr","status":"draft","v":"c2b4084bc2"},{"code":"ar","lang":"ar","name":"العربية","dir":"rtl","status":"draft","v":"d513ec0020"}]/*END LANGS*/;
 
   var COLLECT = window.__SIDUS_I18N_MODE === 'collect';
   var SCRIPT = document.currentScript;
