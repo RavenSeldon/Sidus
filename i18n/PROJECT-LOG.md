@@ -1,6 +1,6 @@
 # Project Log — Sīdus Translation Layer (i18n)
 
-Branch `i18n-wave1` in `~/Root/Sidus` on Hel. Nothing here is committed; Ben commits and pushes. Railway deploys only `main`.
+Branch `i18n-wave1` in `~/Root/Sidus` on Hel. Ben commits and pushes, to the `github` remote (`origin` is the read-only recovery mirror). Railway deploys only `main`.
 
 **Source of truth:** `~/Root/Sidus` on Hel, from CP2 on. Claude's cloud working copy is scratch and may be stale or gone.
 
@@ -40,7 +40,7 @@ With the `claude` CLI logged in on Hel, steps 1–3 are replaced by `node script
    cd ~/Root/Sidus
    git add .gitignore index.html research/index.html research/e0-b/index.html research/archive/index.html sw.js package.json package-lock.json assets/i18n i18n scripts/i18n
    git commit -m "Translation layer: 7 languages, Wave 1 drafts"
-   git push -u origin i18n-wave1
+   git push -u github i18n-wave1
    ```
 3. Merge to `main` to publish, either after the review or now, since every language is clearly labelled a draft.
 4. Run `claude /login` on Hel, then do Wave 2.
