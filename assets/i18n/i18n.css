@@ -1,0 +1,38 @@
+/* Sīdus translation layer: language switcher, draft notice, script-specific type. */
+html.i18n-pending body{visibility:hidden}
+
+.i18n-switch{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans,system-ui,sans-serif);color:var(--muted,#a39c8b);cursor:pointer}
+.i18n-switch .i18n-glyph{font-size:12px;color:var(--gold,#c9a451);letter-spacing:0}
+.i18n-switch .i18n-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.i18n-switch select{appearance:none;-webkit-appearance:none;background:transparent;color:var(--muted,#a39c8b);border:1px solid var(--line2,rgba(201,164,81,.16));border-radius:2px;padding:4px 22px 4px 9px;font:inherit;font-size:11px;letter-spacing:.06em;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--gold,#c9a451) 50%),linear-gradient(135deg,var(--gold,#c9a451) 50%,transparent 50%);background-position:calc(100% - 11px) 52%,calc(100% - 7px) 52%;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
+.i18n-switch select:hover,.i18n-switch select:focus{color:var(--gold2,#e1c879);border-color:var(--line,rgba(201,164,81,.36))}
+.i18n-switch select:focus-visible{outline:2px solid var(--gold2,#e1c879);outline-offset:2px}
+.i18n-switch option{background:#0b0b09;color:#e8e2d1}
+.i18n-switch.in-bar{margin-left:22px}
+.i18n-switch.floating{position:fixed;z-index:50;top:14px;right:16px;background:rgba(7,7,6,.88);padding:4px 6px;border-radius:3px}
+[dir=rtl] .i18n-switch.in-bar{margin-left:0;margin-right:22px}
+[dir=rtl] .i18n-switch.floating{right:auto;left:16px}
+@media(max-width:980px){.i18n-switch.in-bar{margin-left:14px}[dir=rtl] .i18n-switch.in-bar{margin-left:0;margin-right:14px}}
+@media(max-width:390px){.i18n-switch .i18n-glyph{display:none}.i18n-switch select{max-width:104px}}
+
+.i18n-note{margin:0 0 30px;padding:12px 16px;border-left:2px solid var(--gold,#c9a451);background:rgba(201,164,81,.05);font-family:var(--sans,system-ui,sans-serif);font-size:12.5px;line-height:1.55;color:var(--muted,#a39c8b)}
+.i18n-note p{margin:0 0 4px}
+.i18n-note a{color:var(--gold2,#e1c879)}
+[dir=rtl] .i18n-note{border-left:0;border-right:2px solid var(--gold,#c9a451)}
+
+/* Script-specific type: each language keeps the site's Latin faces and adds its own. */
+html:lang(zh-Hans){--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Songti SC","Noto Serif SC","Source Han Serif SC","SimSun",serif;--sans:Inter,ui-sans-serif,-apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif}
+html:lang(ja){--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;--sans:Inter,ui-sans-serif,-apple-system,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif}
+html:lang(ar){--serif:"Iowan Old Style","Palatino Linotype",Palatino,"Geeza Pro","Noto Naskh Arabic","Amiri","Times New Roman",serif;--sans:Inter,ui-sans-serif,-apple-system,"Geeza Pro","Noto Sans Arabic","Segoe UI",sans-serif}
+html:lang(zh-Hans) body,html:lang(ja) body{line-break:strict}
+html:lang(zh-Hans) :is(.eyebrow,.hero-kicker,.translation-tag,.rail-group,.topnav a,.mobile-tabs a,.brand-sub),
+html:lang(ja) :is(.eyebrow,.hero-kicker,.translation-tag,.rail-group,.topnav a,.mobile-tabs a,.brand-sub),
+html:lang(ar) :is(.eyebrow,.hero-kicker,.translation-tag,.rail-group,.topnav a,.mobile-tabs a,.brand-sub){letter-spacing:.04em}
+html:lang(ar) body{line-height:1.85}
+
+/* Arabic reads right to left; the fixed frame and rail keep their places. */
+[dir=rtl] .rail a{border-left:0;padding-left:0;border-right:1px solid transparent;padding-right:10px}
+[dir=rtl] .rail a:hover,[dir=rtl] .rail a.active{border-right-color:var(--gold,#c9a451)}
+[dir=rtl] .rail nav{padding-right:0;padding-left:6px}
+[dir=rtl] .topnav{margin-left:0;margin-right:auto}
+[dir=rtl] math{direction:ltr}

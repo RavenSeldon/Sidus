@@ -34,3 +34,6 @@ build/
 
 #script builds
 *.patch
+
+# Translation work files (packets, review sheets); the translation memory lives in i18n/locales/
+i18n/work/

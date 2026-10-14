@@ -1,0 +1,17 @@
+{
+  "name": "sidus-quest",
+  "private": true,
+  "type": "module",
+  "description": "Tooling for sidus.quest. The site itself is static and needs no build step to serve.",
+  "scripts": {
+    "i18n": "node scripts/i18n/sync.mjs",
+    "i18n:extract": "node scripts/i18n/extract.mjs",
+    "i18n:translate": "node scripts/i18n/translate.mjs",
+    "i18n:build": "node scripts/i18n/build.mjs",
+    "i18n:check": "node scripts/i18n/check.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  },
+  "engines": {"node": ">=20"}
+}

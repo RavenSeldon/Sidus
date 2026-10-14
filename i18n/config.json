@@ -1,0 +1,129 @@
+{
+  "source": {
+    "code": "en",
+    "lang": "en",
+    "name": "English",
+    "dir": "ltr"
+  },
+  "languages": [
+    {
+      "code": "en",
+      "lang": "en",
+      "name": "English",
+      "dir": "ltr",
+      "enabled": true,
+      "status": "source"
+    },
+    {
+      "code": "fr",
+      "lang": "fr",
+      "name": "Français",
+      "dir": "ltr",
+      "enabled": true,
+      "status": "draft"
+    },
+    {
+      "code": "es",
+      "lang": "es",
+      "name": "Español",
+      "dir": "ltr",
+      "enabled": true,
+      "status": "draft"
+    },
+    {
+      "code": "pt",
+      "lang": "pt-BR",
+      "name": "Português",
+      "dir": "ltr",
+      "enabled": true,
+      "status": "draft",
+      "note": "Brazilian Portuguese"
+    },
+    {
+      "code": "nl",
+      "lang": "nl",
+      "name": "Nederlands",
+      "dir": "ltr",
+      "enabled": true,
+      "status": "draft"
+    },
+    {
+      "code": "zh-hans",
+      "lang": "zh-Hans",
+      "name": "简体中文",
+      "dir": "ltr",
+      "enabled": true,
+      "status": "draft"
+    },
+    {
+      "code": "ja",
+      "lang": "ja",
+      "name": "日本語",
+      "dir": "ltr",
+      "enabled": true,
+      "status": "draft"
+    },
+    {
+      "code": "ar",
+      "lang": "ar",
+      "name": "العربية",
+      "dir": "rtl",
+      "enabled": true,
+      "status": "draft",
+      "note": "Modern Standard Arabic"
+    },
+    {
+      "code": "yo",
+      "lang": "yo",
+      "name": "Yorùbá",
+      "dir": "ltr",
+      "enabled": false,
+      "status": "planned",
+      "note": "Reserved for Ben: Ogun State variety"
+    }
+  ],
+  "crawl": {
+    "entries": [
+      "/index.html#/home",
+      "/research/",
+      "/research/e0-b/",
+      "/research/archive/"
+    ],
+    "exclude": [
+      "^/e0a\\.html",
+      "^/Sidus_Dossier_Standalone\\.html",
+      "^/(downloads|source|paper|assets|scripts|i18n)/"
+    ]
+  },
+  "waves": {
+    "wave1": [
+      "^#/home$",
+      "^#/primer(/.*)?$",
+      "^#/atlas$",
+      "^#/document/\\d+/frontpiece$",
+      "^/research/$",
+      "^/research/e0-b/$",
+      "^/research/archive/$"
+    ],
+    "wave2": [
+      ".*"
+    ]
+  },
+  "currentWave": "wave1",
+  "patterns": {
+    "minMembers": 3,
+    "maxWords": 12
+  },
+  "translator": {
+    "batchWords": 1500,
+    "cli": [
+      "claude",
+      "-p",
+      "--model",
+      "opus",
+      "--output-format",
+      "text"
+    ],
+    "apiModel": "claude-opus-5-5"
+  }
+}
