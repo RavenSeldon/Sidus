@@ -1,10 +1,10 @@
 # Project Log — Sīdus Translation Layer (i18n)
 
-Branch `i18n-wave1` in `~/Root/Sidus` on Hel. Ben commits and pushes, to the `github` remote (`origin` is the read-only recovery mirror). Railway deploys only `main`.
+Branch `i18n-wave2` in `~/Root/Sidus` on Hel. Ben commits and pushes, to the `github` remote (`origin` is the read-only recovery mirror). Railway deploys only `main`.
 
 **Source of truth:** `~/Root/Sidus` on Hel, from CP2 on. Claude's cloud working copy is scratch and may be stale or gone.
 
-**Resume point:** CP5 done — Wave 1 is complete, verified and documented; it waits for Ben’s review (see `i18n/README.md` → Reviewing). Next, after the review: `claude /login` on Hel, set `"currentWave": "wave2"` in `i18n/config.json`, run `npm run i18n`, then `node scripts/build_companion.mjs`.
+**Resume point:** Wave 2 is complete and verified in all seven required languages: 2,416/2,416 each, 0 stale and 0 invalid. The strict rendered translation check and all site checks pass; the frozen canon and both standalone HTML files are unchanged. Arabic and the final service-worker cache bump await Ben’s commit. Every translation remains labelled as a draft until native-speaker review (see `i18n/README.md` → Reviewing).
 
 ## How a CP3 language is done (resumable)
 1. `node scripts/i18n/translate.mjs --backend packets` writes `i18n/work/<code>.todo.tsv` (row, id, kind, English). Wave 1 has 551 rows in reading order. The id order hash is `e0e959de…`, identical to the cloud copy's.
@@ -29,6 +29,7 @@ With the `claude` CLI logged in on Hel, steps 1–3 are replaced by `node script
 - [x] Nederlands (`nl`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 20:28)
 - [x] 中文（简体）(`zh-hans`): 2,416/2,416, 0 stale, 0 invalid (2026-10-15 00:59)
 - [x] 日本語 (`ja`): 2,416/2,416, 0 stale, 0 invalid (2026-10-15 01:25)
+- [x] العربية (`ar`): 2,416/2,416, 0 stale, 0 invalid (2026-10-15 06:04)
 
 ## Done (verified by)
 - Runtime and pipeline. Marker test, 2026-10-14:
@@ -37,22 +38,23 @@ With the `claude` CLI logged in on Hel, steps 1–3 are replaced by `node script
   - Screenshots reviewed.
 - Catalog: 2,405 units and 11 number patterns, 28,497 English words over 111 routes. Wave 1 is 551 items, 4,797 words (`node scripts/i18n/extract.mjs`).
 - Wave 1 translations: 7 languages × 551 items, drafted by Claude (Opus 5.5) with the glossary and imported with 0 rejections. `check.mjs --render` passes in every language (2026-10-14 13:40).
+- Wave 2 translations: 7 languages × 2,416 items, with all 1,865 new items per language imported with 0 rejections. Each language reports 0 stale and 0 invalid (2026-10-15 06:04).
+- Wave 2 final validation: `check.mjs --render --strict --shots ~/Root/Hel-Setup/i18n-shots-w2` passes with no page errors or English fallbacks. `check_companion.mjs`, `check_e0b.mjs` and `check_e0a.py` all pass; `e0a.html` and `Sidus_Dossier_Standalone.html` are byte-unchanged. `build_companion.mjs` bumped the service-worker cache to `sidus-dossier-v7-e0b-77f3722a5e60` (2026-10-15 06:05).
 - Push from `~/Root/Sidus` goes to GitHub (authenticated dry run, 2026-10-14 05:50; see Hel-Setup/HEL-SETUP.md).
 
 ## Remaining
-**Code to write:** Wave 2 after Ben’s review: the full Documents I–IV and the E0-A and E0-B reports, about 23,700 more English words per language. It is automatic once the `claude` CLI is logged in on Hel.
+**Code to write:** None for required Wave 2.
 **Human actions:**
-1. Review Wave 1. Start with Arabic and the glossary choices; the steps are in `i18n/README.md` → Reviewing.
-2. Commit and push the branch. A push to the branch deploys nothing, because Railway deploys `main` only:
+1. Review the Wave 1 and Wave 2 drafts with native speakers. Start with Arabic and the glossary choices; the steps are in `i18n/README.md` → Reviewing.
+2. Commit and push the completed Arabic checkpoint. A push to the branch deploys nothing, because Railway deploys `main` only:
    ```sh
    cd ~/Root/Sidus
-   git add .gitignore index.html research/index.html research/e0-b/index.html research/archive/index.html sw.js package.json package-lock.json assets/i18n i18n scripts/i18n
-   git commit -m "Translation layer: 7 languages, Wave 1 drafts"
-   git push -u github i18n-wave1
+   git add assets/i18n/ar.js assets/i18n/i18n.js i18n/coverage.json i18n/locales/ar.json i18n/PROJECT-LOG.md sw.js
+   git commit -m "i18n: complete Arabic Wave 2 draft"
+   git push -u github i18n-wave2
    ```
-3. Merge to `main` to publish, either after the review or now, since every language is clearly labelled a draft.
-4. Run `claude /login` on Hel, then do Wave 2.
-5. Yoruba (Ogun State), whenever you are ready; see `i18n/README.md` → Adding a language.
+3. Publish that checkpoint to `main` when ready; the other six Wave 2 languages are already live and every language is clearly labelled a draft.
+4. Yoruba (Ogun State), whenever you are ready; see `i18n/README.md` → Adding a language.
 
 ## Decisions of record
 - **Languages:** English (source) plus Français, Español, Português (Brasil), Nederlands, 中文 (简体), 日本語 and العربية (RTL). The Yoruba (Ogun State) slot is reserved for Ben. (Ben, 2026-10-14)
