@@ -24,6 +24,9 @@ With the `claude` CLI logged in on Hel, steps 1–3 are replaced by `node script
 
 ## Wave 2 checkpoints
 - [x] Français (`fr`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 15:09)
+- [x] Español (`es`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 19:44)
+- [x] Português (`pt`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 20:02)
+- [x] Nederlands (`nl`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 20:28)
 
 ## Done (verified by)
 - Runtime and pipeline. Marker test, 2026-10-14:
