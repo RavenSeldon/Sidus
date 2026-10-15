@@ -27,6 +27,8 @@ With the `claude` CLI logged in on Hel, steps 1–3 are replaced by `node script
 - [x] Español (`es`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 19:44)
 - [x] Português (`pt`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 20:02)
 - [x] Nederlands (`nl`): 2,416/2,416, 0 stale, 0 invalid (2026-10-14 20:28)
+- [x] 中文（简体）(`zh-hans`): 2,416/2,416, 0 stale, 0 invalid (2026-10-15 00:59)
+- [x] 日本語 (`ja`): 2,416/2,416, 0 stale, 0 invalid (2026-10-15 01:25)
 
 ## Done (verified by)
 - Runtime and pipeline. Marker test, 2026-10-14:

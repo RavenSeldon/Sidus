@@ -1,13 +1,13 @@
 {
-  "built": "2026-10-15T04:35:33.796Z",
+  "built": "2026-10-15T10:41:26.194Z",
   "sourceCommit": "dcb6410",
   "languages": {
     "fr": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":2416,"words":28497,"wordsDone":28497},"stale":0,"invalid":0},
     "es": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":2416,"words":28497,"wordsDone":28497},"stale":0,"invalid":0},
     "pt": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":2416,"words":28497,"wordsDone":28497},"stale":0,"invalid":0},
     "nl": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":2416,"words":28497,"wordsDone":28497},"stale":0,"invalid":0},
-    "zh-hans": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":551,"words":28497,"wordsDone":4797},"stale":0,"invalid":0},
-    "ja": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":551,"words":28497,"wordsDone":4797},"stale":0,"invalid":0},
+    "zh-hans": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":2416,"words":28497,"wordsDone":28497},"stale":0,"invalid":0},
+    "ja": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":2416,"words":28497,"wordsDone":28497},"stale":0,"invalid":0},
     "ar": {"wave1":{"items":551,"done":551,"words":4797,"wordsDone":4797},"wave2":{"items":2416,"done":551,"words":28497,"wordsDone":4797},"stale":0,"invalid":0}
   }
 }
